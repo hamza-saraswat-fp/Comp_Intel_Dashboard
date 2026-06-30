@@ -74,6 +74,7 @@ def build_rows():
             "primary_source": (fm.get("primary_source") or "").strip() or None,
             "sources": citations(body),
             "needs_verification": as_bool(fm.get("needs_verification")),
+            "as_of": (fm.get("as_of") or "").strip() or None,
         })
 
     return competitors, capabilities, offerings

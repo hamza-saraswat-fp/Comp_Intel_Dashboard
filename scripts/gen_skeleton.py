@@ -72,6 +72,7 @@ def main() -> None:
                 "status: not_researched\n"
                 "depth:\n"
                 "primary_source:\n"
+                "as_of:\n"
                 "needs_verification: true\n"
                 "---"
             )
