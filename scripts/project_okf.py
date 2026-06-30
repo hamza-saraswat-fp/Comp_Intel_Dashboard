@@ -77,7 +77,28 @@ def build_rows():
             "as_of": (fm.get("as_of") or "").strip() or None,
         })
 
-    return competitors, capabilities, offerings
+    detections = []
+    ddir = KB / "detections"
+    if ddir.exists():
+        for path in sorted(ddir.glob("*.md")):
+            if path.name in RESERVED:
+                continue
+            fm, _ = _read(path)
+            if fm.get("type") != "Detection":
+                continue
+            detections.append({
+                "id": fm.get("id", path.stem),
+                "competitor": (fm.get("competitor") or "").strip() or None,
+                "capability": (fm.get("capability") or "").strip() or None,  # nullable: uncategorized allowed
+                "what": fm.get("what", ""),
+                "kind": (fm.get("kind") or "").strip() or None,
+                "significance": (fm.get("significance") or "").strip() or None,
+                "source_url": (fm.get("source_url") or "").strip() or None,
+                "first_seen": (fm.get("first_seen") or "").strip() or None,
+                "okf_path": str(path.relative_to(ROOT)),
+            })
+
+    return competitors, capabilities, offerings, detections
 
 
 def main() -> int:
@@ -85,11 +106,13 @@ def main() -> int:
     ap.add_argument("--dry-run", action="store_true", help="print rows, don't touch Supabase")
     args = ap.parse_args()
 
-    competitors, capabilities, offerings = build_rows()
-    print(f"Parsed {len(competitors)} competitors, {len(capabilities)} capabilities, {len(offerings)} offerings.")
+    competitors, capabilities, offerings, detections = build_rows()
+    print(f"Parsed {len(competitors)} competitors, {len(capabilities)} capabilities, "
+          f"{len(offerings)} offerings, {len(detections)} detections.")
 
     if args.dry_run:
-        print(json.dumps({"competitors": competitors, "capabilities": capabilities, "offerings": offerings}, indent=2))
+        print(json.dumps({"competitors": competitors, "capabilities": capabilities,
+                          "offerings": offerings, "detections": detections}, indent=2))
         return 0
 
     url = os.environ.get("SUPABASE_URL")
@@ -107,6 +130,13 @@ def main() -> int:
     db.table("competitors").upsert(competitors, on_conflict="slug").execute()
     db.table("capabilities").upsert(capabilities, on_conflict="slug").execute()
     db.table("offerings").upsert(offerings, on_conflict="competitor,capability").execute()
+    if detections:
+        db.table("detections").upsert(detections, on_conflict="id").execute()
+        # Prune detections only when some are present (append-only feed; never wipe on an empty parse).
+        cur_det = {d["id"] for d in detections}
+        for row in db.table("detections").select("id").execute().data:
+            if row["id"] not in cur_det:
+                db.table("detections").delete().eq("id", row["id"]).execute()
 
     # Prune rows whose key no longer exists in the bundle (full reconcile),
     # guarded so a partial/empty bundle can't wipe the DB.
