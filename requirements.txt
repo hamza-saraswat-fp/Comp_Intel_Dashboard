@@ -1,0 +1,3 @@
+# Backend tooling deps. The bundle scripts (gen_skeleton, validate_okf, parser)
+# are stdlib-only; only the projector needs a client.
+supabase>=2.4

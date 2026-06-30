@@ -1,0 +1,46 @@
+{
+  "version": 1,
+  "note": "Canonical AI-capability taxonomy for Competitor Intel. Hand-edited source of truth. Consumed by scripts/gen_skeleton.py (to lay down knowledge/capabilities) and project_okf.py, and (later) by comp_intel_monitor for capability tagging. Edit here, then re-run gen_skeleton.py.",
+  "capabilities": [
+    {
+      "id": "customer-contact-agent",
+      "title": "AI Customer-Contact Agent",
+      "blurb": "Inbound calls and chat/SMS handled by AI — receptionist, lead capture, and 24/7 booking."
+    },
+    {
+      "id": "in-product-copilot",
+      "title": "In-Product AI Copilot",
+      "blurb": "An in-app assistant to query your data, pull analytics, and get coaching in plain English."
+    },
+    {
+      "id": "dispatch-scheduling",
+      "title": "AI Dispatch & Scheduling",
+      "blurb": "ML technician assignment and schedule/route optimization by skill, location, capacity, and job value."
+    },
+    {
+      "id": "marketing-content",
+      "title": "AI Marketing & Content",
+      "blurb": "Generates marketing assets — email, SMS, social, campaigns — from the business's own customer and job data."
+    },
+    {
+      "id": "reputation-reviews",
+      "title": "AI Reputation & Reviews",
+      "blurb": "Automated review solicitation, AI-drafted responses, and reputation monitoring."
+    },
+    {
+      "id": "back-office-automation",
+      "title": "AI Back-Office Automation",
+      "blurb": "AI for quoting/estimating and document/data work — price books, estimates, invoice OCR, and data entry."
+    },
+    {
+      "id": "agentic-workflow",
+      "title": "Agentic Workflow Automation (emerging)",
+      "blurb": "Multi-step autonomous agents that run end-to-end office workflows, with human-in-the-loop guardrails."
+    }
+  ],
+  "competitors": [
+    { "slug": "servicetitan", "name": "ServiceTitan" },
+    { "slug": "housecall-pro", "name": "Housecall Pro" },
+    { "slug": "jobber", "name": "Jobber" }
+  ]
+}
