@@ -1,0 +1,7 @@
+# Supabase CLI config. `project_id` is the local handle; link to the remote
+# project (in Evan's workspace) with:  supabase link --project-ref <ref>
+# then apply the schema with:           supabase db push
+project_id = "comp-intel-dashboard"
+
+[db]
+major_version = 15
