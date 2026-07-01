@@ -11,6 +11,14 @@ const LABEL: Record<string, string> = {
   not_researched: "Not assessed",
 }
 
+// Soft status tints (fill + accessible text) on the active states only.
+// none / not assessed stay quiet with no fill, so color tracks presence.
+const TINT: Record<string, { bg: string; fg: string }> = {
+  shipped: { bg: "rgba(23,147,106,0.12)", fg: "#0f6e56" },
+  beta: { bg: "rgba(63,99,196,0.12)", fg: "#2d4aa0" },
+  announced: { bg: "rgba(184,121,26,0.14)", fg: "#8a5a13" },
+}
+
 export function StatusPill({ o, overview = false }: { o: Offering; overview?: boolean }) {
   const lead = o.status === "shipped" && o.depth === "market_leading"
   let label: string
@@ -31,9 +39,16 @@ export function StatusPill({ o, overview = false }: { o: Offering; overview?: bo
     dot = <span className={cn("h-0.5 w-3 rounded", o.status === "none" ? "bg-none" : "bg-na")} />
   }
 
+  const tint = TINT[o.status]
   const muted = o.status === "none" || o.status === "not_researched"
   return (
-    <span className={cn("inline-flex items-center gap-2 text-[12.5px] font-semibold", muted ? "font-medium text-muted-foreground" : "text-foreground")}>
+    <span
+      className={cn(
+        "inline-flex items-center gap-2 text-[12.5px] font-semibold",
+        tint ? "rounded-full px-2.5 py-[3px]" : muted ? "font-medium text-muted-foreground" : "text-foreground"
+      )}
+      style={tint ? { backgroundColor: tint.bg, color: tint.fg } : undefined}
+    >
       {dot}
       <span>{label}</span>
       {overview && lead && <Star className="size-3.5 shrink-0 fill-navy stroke-navy" aria-label="Leading" />}
