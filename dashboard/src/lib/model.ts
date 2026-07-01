@@ -54,3 +54,10 @@ export function firstSentence(s: string): string {
   const m = s.match(/^.*?[.!?](?=\s|$)/)
   return m ? m[0] : s
 }
+
+// Shorten a source's display title: drop a trailing " | Brand" tag, then cap length.
+export function shortTitle(t: string): string {
+  let s = t.split(" | ")[0].trim()
+  if (s.length > 52) s = s.slice(0, 52).replace(/\s+\S*$/, "").trimEnd() + "…"
+  return s
+}

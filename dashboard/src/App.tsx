@@ -16,7 +16,7 @@ export default function App() {
   return (
     <div className="grid min-h-screen grid-cols-[252px_1fr] max-[920px]:grid-cols-1">
       <Sidebar view={view} onView={goto} onCapability={(slug) => openCapability(slug)} />
-      <main className="max-w-[1160px] px-11 pb-20 pt-9 max-[920px]:px-[18px]">
+      <main className="px-11 pb-20 pt-9 max-[920px]:px-[18px]">
         {view.t === "overview" && <Overview onView={goto} onCapability={openCapability} />}
         {view.t === "whatsnew" && <WhatsNew />}
         {view.t === "competitor" && <CompetitorProfile slug={view.slug} onView={goto} onCapability={openCapability} />}

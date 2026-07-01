@@ -24,17 +24,17 @@ export function Overview({
   return (
     <div>
       <header className="mb-6">
-        <h1 className="text-[27px] font-bold tracking-[-0.03em]">AI competitive landscape</h1>
-        <p className="mt-3 max-w-[33ch] text-[clamp(19px,2vw,25px)] font-bold leading-[1.32] tracking-[-0.022em]">
-          <span className="text-navy">{leader.name} sets the AI pace</span>, the only player shipping true ML dispatch. {restStr} are close behind on nearly everything else.
-        </p>
+        <div className="text-[11px] font-bold uppercase tracking-[0.09em] text-muted-foreground">AI competitive landscape</div>
+        <h1 className="mt-2.5 max-w-[54ch] text-[clamp(19px,2vw,25px)] font-bold leading-[1.32] tracking-[-0.022em]">
+          <span className="text-cobalt">{leader.name} sets the AI pace</span>, the only player shipping true ML dispatch. {restStr} are close behind on nearly everything else.
+        </h1>
         <p className="mt-3.5 text-[12px] font-medium text-muted-foreground">
           {ORDER.length} players · {TOTAL} capabilities · click any capability to compare all four
         </p>
       </header>
 
       <div className="overflow-hidden rounded-xl border bg-card">
-        <table className="w-full border-collapse">
+        <table className="w-full table-fixed border-collapse">
           <thead>
             <tr className="border-b">
               <th className="w-[28%] px-[18px] py-[15px] text-left align-bottom text-[10.5px] font-bold uppercase tracking-[0.07em] text-muted-foreground">Capability</th>
