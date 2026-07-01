@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { capBySlug, ORDER, off, score, firstSentence, shortTitle } from "@/lib/model"
+import { capBySlug, ORDER, off, score, summarize, shortTitle } from "@/lib/model"
 import { cn } from "@/lib/utils"
 import { ChevronDown } from "lucide-react"
 import { LogoMark } from "./LogoMark"
@@ -75,7 +75,7 @@ export function CapabilityDrawer({
                   const hasDetail = !c.is_fieldpulse && !!o.assessment
                   const preview = c.is_fieldpulse
                     ? "Not yet assessed internally, shown for an honest gap read, never inflated."
-                    : firstSentence(o.assessment)
+                    : summarize(o.assessment)
                   const sources = o.sources.length ? o.sources : o.primary_source ? [{ title: o.primary_source, url: o.primary_source }] : []
 
                   return (
@@ -105,7 +105,7 @@ export function CapabilityDrawer({
                           </span>
                         </div>
                         {!isOpen && (
-                          <p className={cn("text-[12.5px] font-medium leading-[1.5] text-muted-foreground", !c.is_fieldpulse && "line-clamp-2")}>{preview}</p>
+                          <p className="text-[12.5px] font-medium leading-[1.5] text-muted-foreground">{preview}</p>
                         )}
                       </button>
 
@@ -113,7 +113,7 @@ export function CapabilityDrawer({
                         <div className="border-t px-4 pb-4 pt-3">
                           <p className="text-[13.5px] font-medium leading-[1.65] text-foreground/80">{o.assessment}</p>
                           {sources.length > 0 && (
-                            <div className="mt-3 flex flex-col gap-1.5">
+                            <div className="mt-3 flex flex-wrap items-center gap-x-3.5 gap-y-1.5">
                               {sources.map((sc, idx) => (
                                 <a
                                   key={idx}

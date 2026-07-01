@@ -55,9 +55,25 @@ export function firstSentence(s: string): string {
   return m ? m[0] : s
 }
 
-// Shorten a source's display title: drop a trailing " | Brand" tag, then cap length.
+// Compact label for a source chip: take the lead segment before the first
+// separator (open paren, em/en dash, or pipe/hyphen), which drops descriptive
+// tails and brand suffixes, then cap the length as a fallback.
 export function shortTitle(t: string): string {
-  let s = t.split(" | ")[0].trim()
-  if (s.length > 52) s = s.slice(0, 52).replace(/\s+\S*$/, "").trimEnd() + "…"
+  let s = t.split(/\s\(|\s[—–]\s|\s\|\s|\s-\s/)[0].trim()
+  if (s.length > 44) s = s.slice(0, 44).replace(/\s+\S*$/, "").trimEnd() + "…"
   return s
+}
+
+// Short teaser for a collapsed card: the first sentence when it is already
+// short, otherwise the lead trimmed at a natural clause boundary. Drops
+// parentheticals and never cuts mid-word, so it reads as a clean summary
+// rather than a chopped-off sentence.
+export function summarize(text: string, max = 130): string {
+  if (!text) return ""
+  const s = firstSentence(text).replace(/\s*\([^)]*\)/g, "").replace(/\s{2,}/g, " ").trim()
+  if (s.length <= max) return s
+  const slice = s.slice(0, max)
+  const at = Math.max(slice.lastIndexOf(", "), slice.lastIndexOf("; "), slice.lastIndexOf(" — "), slice.lastIndexOf(" – "))
+  const cut = at > max * 0.5 ? slice.slice(0, at) : slice.replace(/\s+\S*$/, "")
+  return cut.replace(/[\s,;:—–-]+$/, "")
 }
