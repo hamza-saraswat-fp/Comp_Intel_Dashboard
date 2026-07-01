@@ -1,4 +1,5 @@
 import { useRef, useState, type ReactNode } from "react"
+import { createPortal } from "react-dom"
 import { Star } from "lucide-react"
 import type { Offering } from "@/data"
 import { ORDER, caps, off, stats, leader, rivals, TOTAL, summarize, fp } from "@/lib/model"
@@ -13,11 +14,15 @@ const stub = (status: string, depth: string | null = null): Offering => ({
 })
 
 // Hover peek: a quick, click-free read of one player's assessment for a capability.
-// Fixed-positioned so it escapes the table's overflow clip; no popover dependency.
+// Rendered through a portal to <body> so the fixed popover escapes the table's
+// overflow clip and the rows' transform (the reveal animation), which would
+// otherwise become its containing block and mis-place it. No popover dependency.
 function CellPeek({ label, text, children }: { label: string; text: string; children: ReactNode }) {
   const [box, setBox] = useState<DOMRect | null>(null)
   const ref = useRef<HTMLDivElement>(null)
   if (!text) return <>{children}</>
+  const left = box ? Math.min(box.left, window.innerWidth - 280) : 0
+  const nearBottom = box ? box.bottom > window.innerHeight - 140 : false
   return (
     <div
       ref={ref}
@@ -27,15 +32,17 @@ function CellPeek({ label, text, children }: { label: string; text: string; chil
       onMouseLeave={() => setBox(null)}
     >
       {children}
-      {box && (
-        <div
-          className="pointer-events-none fixed z-50 w-[264px] rounded-lg border bg-popover px-3.5 py-2.5 shadow-[0_10px_30px_-12px_rgba(0,3,77,0.28)]"
-          style={{ left: Math.min(box.left, window.innerWidth - 280), top: box.bottom + 8 }}
-        >
-          <div className="text-[10px] font-bold uppercase tracking-[0.07em] text-muted-foreground">{label}</div>
-          <p className="mt-1 text-[12px] font-medium leading-[1.5] text-foreground/80">{text}</p>
-        </div>
-      )}
+      {box &&
+        createPortal(
+          <div
+            className="pointer-events-none fixed z-50 w-[264px] rounded-lg border bg-popover px-3.5 py-2.5 shadow-[0_10px_30px_-12px_rgba(0,3,77,0.28)]"
+            style={nearBottom ? { left, bottom: window.innerHeight - box.top + 8 } : { left, top: box.bottom + 8 }}
+          >
+            <div className="text-[10px] font-bold uppercase tracking-[0.07em] text-muted-foreground">{label}</div>
+            <p className="mt-1 text-[12px] font-medium leading-[1.5] text-foreground/80">{text}</p>
+          </div>,
+          document.body
+        )}
     </div>
   )
 }
