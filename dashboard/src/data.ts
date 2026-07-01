@@ -1,5 +1,10 @@
-// Generated from the OKF bundle as of 2026-06-30. Temporary seed; replace with a Supabase fetch. Do not hand-edit; regenerate from knowledge/.
-window.DATA = {
+export interface Source { title: string; url: string }
+export interface Offering { competitor: string; capability: string; status: string; depth: string | null; assessment: string; primary_source: string | null; sources: Source[]; as_of: string | null; needs_verification: boolean }
+export interface Competitor { slug: string; name: string; is_fieldpulse: boolean; summary: string }
+export interface Capability { slug: string; title: string; blurb: string; overall: string; sort_order: number }
+export interface DataShape { generated_at: string; competitors: Competitor[]; capabilities: Capability[]; offerings: Offering[] }
+
+export const DATA: DataShape = {
   generated_at: "2026-06-30",
   competitors: [
     { slug: "fieldpulse", name: "FieldPulse", is_fieldpulse: true, summary: "Not yet assessed internally. FieldPulse is shown here as an honest gap read and will be filled in once confirmed with the team." },
