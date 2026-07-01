@@ -28,8 +28,12 @@ export function StatusPill({ o, overview = false }: { o: Offering; overview?: bo
     label = o.status === "not_researched" ? "Not assessed" : LABEL[o.status]
   }
 
+  // In the overview, the market-leader's glyph is the star itself (it replaces
+  // the live dot); the green tint still carries "live". Elsewhere, the status dot.
   let dot: ReactNode
-  if (o.status === "shipped") {
+  if (overview && lead) {
+    dot = <Star className="size-3.5 shrink-0 fill-navy stroke-navy" aria-label="Leading" />
+  } else if (o.status === "shipped") {
     dot = <span className="h-2.5 w-2.5 rounded-full bg-live" />
   } else if (o.status === "beta") {
     dot = <span className="h-2.5 w-2.5 rounded-full border-[1.5px] border-beta" style={{ boxShadow: "inset -5.5px 0 0 var(--beta)" }} />
@@ -51,7 +55,6 @@ export function StatusPill({ o, overview = false }: { o: Offering; overview?: bo
     >
       {dot}
       <span>{label}</span>
-      {overview && lead && <Star className="size-3.5 shrink-0 fill-navy stroke-navy" aria-label="Leading" />}
     </span>
   )
 }
