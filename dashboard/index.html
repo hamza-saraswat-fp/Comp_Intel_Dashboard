@@ -10,20 +10,13 @@
   <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-  <div class="page">
-    <div class="wrap">
-      <header class="masthead" id="masthead"></header>
-      <p class="verdict" id="verdict"></p>
-      <section class="cards" id="cards" aria-label="How each player stacks up"></section>
-      <section class="matrix-wrap" id="matrix" aria-label="Capability by competitor"></section>
-      <div class="legend" id="legend"></div>
-      <footer class="foot" id="foot"></footer>
-    </div>
+  <div class="app">
+    <aside class="sidebar" id="sidebar"></aside>
+    <main class="main" id="view" tabindex="-1"></main>
   </div>
-  <div class="drawer-overlay" id="drawer-overlay" hidden></div>
-  <aside class="drawer" id="drawer" aria-hidden="true" aria-modal="true" role="dialog" tabindex="-1" hidden></aside>
-
-  <noscript>This dashboard needs JavaScript to render the competitor matrix.</noscript>
+  <div class="scrim" id="scrim" hidden></div>
+  <aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-hidden="true" tabindex="-1" hidden></aside>
+  <noscript>This dashboard needs JavaScript to render.</noscript>
   <script src="./data.js"></script>
   <script src="./app.js"></script>
 </body>
