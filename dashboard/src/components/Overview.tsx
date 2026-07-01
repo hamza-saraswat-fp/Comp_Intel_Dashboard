@@ -135,8 +135,8 @@ export function Overview({
         <StatusPill o={stub("none")} overview />
         <StatusPill o={stub("not_researched")} overview />
         <Separator orientation="vertical" className="h-3.5" />
-        <span className="inline-flex items-center gap-1.5 text-[12.5px] font-semibold text-foreground">
-          <Star className="size-3.5 shrink-0 fill-navy stroke-navy" />
+        <span className="inline-flex items-center gap-1.5 text-[12.5px] font-semibold" style={{ color: "#0f6e56" }}>
+          <Star className="size-3.5 shrink-0" style={{ fill: "#0f6e56", stroke: "#0f6e56" }} />
           Leading
         </span>
       </div>

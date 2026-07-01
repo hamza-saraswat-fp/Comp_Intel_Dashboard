@@ -21,6 +21,7 @@ const TINT: Record<string, { bg: string; fg: string }> = {
 
 export function StatusPill({ o, overview = false }: { o: Offering; overview?: boolean }) {
   const lead = o.status === "shipped" && o.depth === "market_leading"
+  const tint = TINT[o.status]
   let label: string
   if (overview) {
     label = o.status === "shipped" ? "Live" : o.status === "not_researched" ? "—" : LABEL[o.status]
@@ -29,10 +30,11 @@ export function StatusPill({ o, overview = false }: { o: Offering; overview?: bo
   }
 
   // In the overview, the market-leader's glyph is the star itself (it replaces
-  // the live dot); the green tint still carries "live". Elsewhere, the status dot.
+  // the live dot). It stays in the pill's own green so the chip reads as one
+  // color; the star shape, not a clashing hue, marks the leader.
   let dot: ReactNode
   if (overview && lead) {
-    dot = <Star className="size-3.5 shrink-0 fill-navy stroke-navy" aria-label="Leading" />
+    dot = <Star className="size-3.5 shrink-0" style={{ fill: tint.fg, stroke: tint.fg }} aria-label="Leading" />
   } else if (o.status === "shipped") {
     dot = <span className="h-2.5 w-2.5 rounded-full bg-live" />
   } else if (o.status === "beta") {
@@ -43,7 +45,6 @@ export function StatusPill({ o, overview = false }: { o: Offering; overview?: bo
     dot = <span className={cn("h-0.5 w-3 rounded", o.status === "none" ? "bg-none" : "bg-na")} />
   }
 
-  const tint = TINT[o.status]
   const muted = o.status === "none" || o.status === "not_researched"
   return (
     <span
