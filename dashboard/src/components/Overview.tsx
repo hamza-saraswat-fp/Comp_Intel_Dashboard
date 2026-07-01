@@ -112,7 +112,7 @@ export function Overview({
                   const o = off(c.slug, cap.slug)
                   const peek = c.is_fieldpulse
                     ? "Not yet assessed internally, shown for an honest gap read."
-                    : summarize(o.assessment, 170)
+                    : summarize(o.assessment)
                   return (
                     <td key={c.slug} className="border-l px-[18px] py-[18px]">
                       <CellPeek label={c.name} text={peek}>

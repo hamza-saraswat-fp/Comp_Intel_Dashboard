@@ -64,16 +64,24 @@ export function shortTitle(t: string): string {
   return s
 }
 
-// Short teaser for a collapsed card: the first sentence when it is already
-// short, otherwise the lead trimmed at a natural clause boundary. Drops
-// parentheticals and never cuts mid-word, so it reads as a clean summary
-// rather than a chopped-off sentence.
-export function summarize(text: string, max = 130): string {
+// A clear lead summary made of WHOLE sentences, never a mid-clause fragment.
+// Returns the first complete sentence (always, even if long), then adds the
+// next sentence only while under maxChars. Parentheticals are dropped for
+// brevity, so the result reads as a finished thought rather than a scrap.
+export function summarize(text: string, maxChars = 230): string {
   if (!text) return ""
-  const s = firstSentence(text).replace(/\s*\([^)]*\)/g, "").replace(/\s{2,}/g, " ").trim()
-  if (s.length <= max) return s
-  const slice = s.slice(0, max)
-  const at = Math.max(slice.lastIndexOf(", "), slice.lastIndexOf("; "), slice.lastIndexOf(" — "), slice.lastIndexOf(" – "))
-  const cut = at > max * 0.5 ? slice.slice(0, at) : slice.replace(/\s+\S*$/, "")
-  return cut.replace(/[\s,;:—–-]+$/, "")
+  const clean = text
+    .replace(/\s*\([^)]*\)/g, "")
+    .replace(/\s+([,.;:])/g, "$1")
+    .replace(/\s{2,}/g, " ")
+    .trim()
+  const sentences = clean.match(/[^.!?]+[.!?]+/g)
+  if (!sentences) return clean
+  let out = sentences[0].trim()
+  for (let i = 1; i < sentences.length; i++) {
+    const next = `${out} ${sentences[i].trim()}`
+    if (next.length > maxChars) break
+    out = next
+  }
+  return out
 }
