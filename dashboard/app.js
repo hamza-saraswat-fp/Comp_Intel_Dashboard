@@ -84,8 +84,7 @@
 
   function renderMasthead() {
     root.getElementById("masthead").innerHTML =
-      '<div class="brand"><span class="mark" aria-hidden="true">' +
-      '<svg viewBox="0 0 24 24" fill="none"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z" fill="currentColor"/></svg></span>' +
+      '<div class="brand"><span class="mark"><img src="./assets/fp-icon.svg" alt="FieldPulse" width="34" height="34"></span>' +
       '<div><div class="bt">Competitor Intel</div><div class="bs">AI capability watch</div></div></div>' +
       '<div class="meta">Updated <b>' + esc(fmtDate(D.generated_at)) + "</b><br>" +
       "FieldPulse + 3 competitors, " + TOTAL + " capabilities<br>Sourced and dated</div>";
