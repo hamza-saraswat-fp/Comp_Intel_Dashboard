@@ -58,7 +58,20 @@
     if (!arr.length) return "";
     return '<div class="player-src">' + arr.map(function (s) { return '<a href="' + esc(s.url) + '" target="_blank" rel="noopener">' + esc(s.title) + "</a>"; }).join("") + "</div>";
   }
-  function chipEl(c, cls) { return '<span class="' + cls + (c.is_fieldpulse ? " fp" : "") + '">' + esc(CHIP[c.slug]) + "</span>"; }
+  var DOMAINS = { servicetitan: "servicetitan.com", "housecall-pro": "housecallpro.com", jobber: "getjobber.com" };
+  var LOGO_TOKEN = "pk_D0FOaWqaQY2TXnfdJJzcsA";  // logo.dev publishable token (frontend-safe)
+  function logoMark(c, size) {
+    var st = 'style="width:' + size + "px;height:" + size + 'px"';
+    if (c.is_fieldpulse) return '<span class="lm" ' + st + '><img src="./assets/fp-icon.svg" alt="FieldPulse"></span>';
+    var dom = DOMAINS[c.slug];
+    if (LOGO_TOKEN && dom) {
+      var url = "https://img.logo.dev/" + dom + "?token=" + LOGO_TOKEN + "&size=" + (size * 2) + "&format=png&retina=true";
+      return '<span class="lm" ' + st + '><img src="' + url + '" alt="' + esc(c.name) + '" loading="lazy"><span class="lm-fb">' + esc(CHIP[c.slug]) + "</span></span>";
+    }
+    return '<span class="lm" ' + st + '><span class="lm-fb">' + esc(CHIP[c.slug]) + "</span></span>";
+  }
+  function chipEl(c, cls) { return logoMark(c, cls === "player-chip" ? 26 : 22); }
+  window.addEventListener("error", function (e) { var t = e.target; if (t && t.tagName === "IMG" && t.closest && t.closest(".lm")) { t.style.display = "none"; } }, true);
   function score(o) { if (o.status === "shipped") return o.depth === "market_leading" ? 4 : o.depth === "strong" ? 3 : 2; if (o.status === "beta") return 2; if (o.status === "announced") return 1; if (o.status === "none") return 0; return -1; }
 
   function renderSidebar() {
@@ -131,7 +144,7 @@
 
     view.innerHTML =
       '<a class="crumb" href="#/overview">← Overview</a>' +
-      '<div class="view-head"><h1>' + esc(c.name) + " " + pchip + '</h1><p class="view-sub">' + (c.is_fieldpulse ? "FieldPulse’s own position, shown honestly." : "How " + esc(c.name) + " stacks up across the " + TOTAL + " AI capabilities. Click any row for the full comparison and sources.") + "</p><div class=\"stats\">" + tiles + "</div></div>" +
+      '<div class="view-head"><div class="prof-h">' + logoMark(c, 38) + "<h1>" + esc(c.name) + " " + pchip + '</h1></div><p class="view-sub">' + (c.is_fieldpulse ? "FieldPulse’s own position, shown honestly." : "How " + esc(c.name) + " stacks up across the " + TOTAL + " AI capabilities. Click any row for the full comparison and sources.") + "</p><div class=\"stats\">" + tiles + "</div></div>" +
       '<div class="summary">' + esc(c.summary) + "</div>" +
       '<div class="sec-title">Capabilities</div><div class="caps">' + rows + "</div>";
   }
