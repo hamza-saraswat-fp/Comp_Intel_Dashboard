@@ -1,32 +1,22 @@
-# React + TypeScript + Vite
+# Competitor Intel dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+The UI for FieldPulse's Competitor Intel: a one-page view of how FieldPulse and its main FSM rivals (ServiceTitan, Housecall Pro, Jobber) compare across AI capabilities. It renders an at-a-glance status matrix, per-competitor profiles, and a capability slide-out with the full four-way comparison and sources.
 
-Currently, two official plugins are available:
+## Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Vite + React + TypeScript, styled with Tailwind CSS v4 and shadcn/ui (Radix). Montserrat is the brand font. This is the only approved stack: every UI change is a React component using Tailwind utility classes and shadcn/ui primitives.
 
-## React Compiler
+## Develop
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```bash
+npm install     # install dependencies
+npm run dev     # start the Vite dev server
+npm run build   # type-check (tsc -b) and build for production
+npm run lint    # run oxlint
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+## Data
+
+The app renders entirely from a typed `DATA` object in `src/data.ts`, a seed snapshot of the competitive landscape. Views read it through the helpers in `src/lib/model.ts`, so the source is swappable: Hamza will replace the seed with a Supabase fetch, and the views need no changes.
+
+Competitor logos load from logo.dev; FieldPulse uses `public/fp-icon.svg`; a missing logo falls back to an initials chip.
