@@ -11,6 +11,7 @@ Instructions Claude reads automatically each session. Keep this file short.
 - `dashboard/` is a Vite + React + TypeScript app, styled with Tailwind CSS v4 and shadcn/ui (Radix). Montserrat is the brand font (loaded in `index.html`).
 - Run: `npm install`, then `npm run dev` (local) or `npm run build` (production). No other toolchain.
 - shadcn primitives live in `dashboard/src/components/ui`; app views in `dashboard/src/components`; shared data model/helpers in `dashboard/src/lib`.
+- This is the only approved stack. Do not add plain HTML/CSS/JS files or any other UI framework; every UI change is a React component using Tailwind utility classes and shadcn/ui primitives.
 
 ## Git (do this automatically; never ask Jaden to run git by hand)
 - Never commit to `main`. For any change:
@@ -28,7 +29,8 @@ Instructions Claude reads automatically each session. Keep this file short.
 - Status is the only field that carries color, and it must be colorblind-safe: shape carries the meaning, color reinforces.
 - Depth is a neutral gray pip, never colored.
 - FieldPulse is shown honestly (not yet assessed / needs verification), never inflated.
-- No prose inside matrix cells; detail lives in the drawer.
+- Competitor logos load from logo.dev (publishable token in `src/components/LogoMark.tsx`) and fill the tile; FieldPulse uses its own SVG in `public/`; a missing logo falls back to an initials chip.
+- Overview and competitor profiles stay scannable (status glyph + short note); the full four-way comparison, assessments, and sources open in the capability slide-out (shadcn `Sheet`).
 - Tabular, lining numerals for every number. Hairlines over shadows. Light surface, navy brand.
 - Sentence case. No em-dashes (use commas, colons, parentheses).
 
