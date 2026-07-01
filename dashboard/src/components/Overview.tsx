@@ -61,14 +61,14 @@ export function Overview({
                 style={{ animationDelay: `${i * 34}ms` }}
                 onClick={() => onCapability(cap.slug)}
               >
-                <td className="px-[18px] py-4">
-                  <span className="inline-flex items-center gap-2 text-[13.5px] font-semibold tracking-tight">
+                <td className="px-[18px] py-[18px]">
+                  <span className="inline-flex items-center gap-2 text-[15px] font-semibold leading-snug tracking-tight">
                     {cap.title}
                     <span className="font-bold text-cobalt opacity-0 transition group-hover:opacity-100">→</span>
                   </span>
                 </td>
                 {ORDER.map((c) => (
-                  <td key={c.slug} className="border-l px-[18px] py-4">
+                  <td key={c.slug} className="border-l px-[18px] py-[18px]">
                     <StatusPill o={off(c.slug, cap.slug)} overview />
                   </td>
                 ))}
