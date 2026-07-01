@@ -39,3 +39,5 @@ navy `#00034D` (ink, chrome, brand) · cobalt `#253E9A` (interactive) · sky `#6
 
 ## Data
 The app renders entirely from a typed `DATA` object in `dashboard/src/data.ts`, a seed snapshot generated from the OKF bundle. It is data-source-agnostic, so swapping the seed for a Supabase fetch needs no changes to the views. The source of truth is always the OKF markdown in `knowledge/`.
+
+Although `data.ts` lives under `dashboard/`, its content (capability titles, blurbs, assessments, source titles) is Hamza's OKF output and gets regenerated, so the UI must not reword it. Derive any display variant (short summaries, truncated link labels, a computed verdict) in the components from the existing text; note real content or wording changes for Hamza. UI copy that is not data (section labels, the word "capability", headings, button text) is yours to change freely.
