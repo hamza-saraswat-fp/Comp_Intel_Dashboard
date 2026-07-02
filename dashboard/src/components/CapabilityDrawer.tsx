@@ -50,18 +50,19 @@ export function CapabilityDrawer({
               {cap.overall && (
                 <div className="mb-5">
                   <button
-                    className="flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-[0.06em] text-cobalt hover:underline"
+                    className="flex w-full items-center gap-1.5 text-[11px] font-bold uppercase tracking-[0.06em] text-cobalt hover:underline"
                     onClick={() => setShowOverall((v) => !v)}
                     aria-expanded={showOverall}
                   >
                     Overall summary
-                    <ChevronDown className={cn("size-3.5 transition-transform", showOverall && "rotate-180")} />
+                    <span className="ml-auto flex items-center gap-1 text-[10px]">
+                      {showOverall ? "Show less" : "Show more"}
+                      <ChevronDown className={cn("size-3.5 transition-transform", showOverall && "rotate-180")} />
+                    </span>
                   </button>
-                  {showOverall && (
-                    <p className="mt-2 rounded-r-[10px] border-l-[3px] border-l-cobalt bg-muted/40 px-4 py-3 text-[12.5px] font-medium leading-[1.65] text-muted-foreground">
-                      {cap.overall}
-                    </p>
-                  )}
+                  <p className="mt-2 rounded-r-[10px] border-l-[3px] border-l-cobalt bg-muted/40 px-4 py-3 text-[12.5px] font-medium leading-[1.65] text-muted-foreground">
+                    {showOverall ? cap.overall : summarize(cap.overall)}
+                  </p>
                 </div>
               )}
 
