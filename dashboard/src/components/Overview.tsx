@@ -109,7 +109,14 @@ export function Overview({
                     ? "Not yet assessed internally, shown for an honest gap read."
                     : summarize(o.assessment)
                   return (
-                    <td key={c.slug} className="border-l px-[18px] py-[18px]">
+                    <td
+                      key={c.slug}
+                      className="border-l px-[18px] py-[18px]"
+                      onClick={(e) => {
+                        e.stopPropagation()
+                        onCapability(cap.slug, c.slug)
+                      }}
+                    >
                       <CellPeek label={c.name} text={peek}>
                         <StatusPill o={o} overview />
                       </CellPeek>

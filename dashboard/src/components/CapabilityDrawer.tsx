@@ -21,11 +21,16 @@ export function CapabilityDrawer({
   const [expanded, setExpanded] = useState<Set<string>>(new Set())
   const [showOverall, setShowOverall] = useState(false)
 
-  // Each capability starts fresh: all rows collapsed, overall summary hidden.
+  // Each capability starts fresh: overall summary collapsed. If the drawer was
+  // opened from a specific player's cell, that player's card starts expanded
+  // (only when it actually has detail, so gap cells don't open to nothing).
   useEffect(() => {
-    setExpanded(new Set())
+    const o = from && capSlug ? off(from, capSlug) : null
+    const fromComp = ORDER.find((c) => c.slug === from)
+    const canExpand = !!o && !!o.assessment && !fromComp?.is_fieldpulse
+    setExpanded(canExpand ? new Set([from as string]) : new Set())
     setShowOverall(false)
-  }, [capSlug])
+  }, [capSlug, from])
 
   const toggle = (slug: string) =>
     setExpanded((prev) => {
