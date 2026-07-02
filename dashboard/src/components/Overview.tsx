@@ -2,7 +2,7 @@ import { useRef, useState, type ReactNode } from "react"
 import { createPortal } from "react-dom"
 import { Star } from "lucide-react"
 import type { Offering } from "@/data"
-import { ORDER, caps, off, stats, leader, rivals, TOTAL, summarize, fp } from "@/lib/model"
+import { ORDER, caps, off, stats, leader, rivals, TOTAL, summarize } from "@/lib/model"
 import type { View } from "@/lib/nav"
 import { cn } from "@/lib/utils"
 import { LogoMark } from "./LogoMark"
@@ -56,10 +56,6 @@ export function Overview({
 }) {
   const rest = rivals.slice(1).map((c) => c.name)
   const restStr = rest.length === 2 ? `${rest[0]} and ${rest[1]}` : rest.join(", ")
-  const ls = stats(leader.slug)
-  // Derived landscape TL;DR: computed from live data as a placeholder. Note for Hamza:
-  // replace with one authoritative summary line in data.ts when ready.
-  const landscape = `Across ${TOTAL} capabilities, ${leader.name} ships AI in ${ls.shipped} and leads outright in ${ls.ml}, including the only true ML dispatch. ${restStr} keep pace on most but ship no AI dispatch. ${fp.name} is not yet assessed internally, shown as an honest gap.`
 
   return (
     <div>
@@ -68,8 +64,7 @@ export function Overview({
         <h1 className="mt-2.5 max-w-[54ch] text-[clamp(19px,2vw,25px)] font-bold leading-[1.32] tracking-[-0.022em]">
           <span className="text-cobalt">{leader.name} sets the AI pace</span>, the only player shipping true ML dispatch. {restStr} are close behind on nearly everything else.
         </h1>
-        <p className="mt-3 max-w-[72ch] text-[13px] font-medium leading-[1.6] text-foreground/70">{landscape}</p>
-        <p className="mt-3 text-[12px] font-medium text-muted-foreground">
+        <p className="mt-3.5 text-[12px] font-medium text-muted-foreground">
           {ORDER.length} players · {TOTAL} capabilities · click any capability to compare all four
         </p>
       </header>
