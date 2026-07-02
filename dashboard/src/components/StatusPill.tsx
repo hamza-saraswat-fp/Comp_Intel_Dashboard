@@ -46,13 +46,21 @@ export function StatusPill({ o, overview = false }: { o: Offering; overview?: bo
   }
 
   const muted = o.status === "none" || o.status === "not_researched"
+  // The market-leader's pill gets a soft green glow so it reads at a glance.
+  const style = tint
+    ? {
+        backgroundColor: tint.bg,
+        color: tint.fg,
+        ...(overview && lead ? { boxShadow: "0 0 0 1px rgba(23,147,106,0.30), 0 2px 12px -1px rgba(23,147,106,0.42)" } : {}),
+      }
+    : undefined
   return (
     <span
       className={cn(
         "inline-flex items-center gap-2 text-[12.5px] font-semibold",
         tint ? "rounded-full px-2.5 py-[3px]" : muted ? "font-medium text-muted-foreground" : "text-foreground"
       )}
-      style={tint ? { backgroundColor: tint.bg, color: tint.fg } : undefined}
+      style={style}
     >
       {dot}
       <span>{label}</span>
