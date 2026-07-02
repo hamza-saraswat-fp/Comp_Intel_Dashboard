@@ -42,7 +42,7 @@ export function CapabilityDrawer({
 
   return (
     <Sheet open={!!cap} onOpenChange={onOpenChange}>
-      <SheetContent className="gap-0 overflow-y-auto p-0">
+      <SheetContent className="gap-0 overflow-y-auto p-0" onOpenAutoFocus={(e) => e.preventDefault()}>
         {cap && (
           <>
             <SheetHeader className="gap-2 border-b p-6 pb-5">
