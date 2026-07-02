@@ -2,7 +2,7 @@ import { useRef, useState, type ReactNode } from "react"
 import { createPortal } from "react-dom"
 import { Star } from "lucide-react"
 import type { Offering } from "@/data"
-import { ORDER, caps, off, stats, leader, rivals, TOTAL, summarize } from "@/lib/model"
+import { ORDER, caps, off, stats, leader, rivals, TOTAL, summarize, fp } from "@/lib/model"
 import type { View } from "@/lib/nav"
 import { cn } from "@/lib/utils"
 import { LogoMark } from "./LogoMark"
@@ -56,15 +56,21 @@ export function Overview({
 }) {
   const rest = rivals.slice(1).map((c) => c.name)
   const restStr = rest.length === 2 ? `${rest[0]} and ${rest[1]}` : rest.join(", ")
+  // Landscape briefing: a "what the chart says" recap under the verdict headline.
+  // This is a computed verdict (like the headline). The factual competitive claims
+  // should move to an authoritative landscape field in data.ts owned by the OKF
+  // backend once Hamza adds one; this derived line is the interim.
+  const landscapeSummary = `${restStr} are close behind, strong on customer contact, marketing, and reputation, but neither ships true ML dispatch. ${leader.name}'s most autonomous "agentic office" is still announced, not shipped, and ${fp.name} is not yet assessed, shown here as an honest gap.`
 
   return (
     <div>
       <header className="mb-6">
         <div className="text-[11px] font-bold uppercase tracking-[0.09em] text-muted-foreground">AI competitive landscape</div>
         <h1 className="mt-2.5 max-w-[54ch] text-[clamp(19px,2vw,25px)] font-bold leading-[1.32] tracking-[-0.022em]">
-          <span className="text-cobalt">{leader.name} sets the AI pace</span>, the only player shipping true ML dispatch. {restStr} are close behind on nearly everything else.
+          <span className="text-cobalt">{leader.name} sets the AI pace</span>, the only player shipping true ML dispatch.
         </h1>
-        <p className="mt-3.5 text-[12px] font-medium text-muted-foreground">
+        <p className="mt-3 max-w-[78ch] text-[13px] font-medium leading-[1.6] text-muted-foreground">{landscapeSummary}</p>
+        <p className="mt-3 text-[12px] font-medium text-muted-foreground">
           {ORDER.length} players · {TOTAL} capabilities · click any capability to compare all four
         </p>
       </header>
