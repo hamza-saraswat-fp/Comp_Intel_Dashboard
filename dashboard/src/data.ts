@@ -8,7 +8,8 @@ export interface Source { title: string; url: string }
 export interface Offering { competitor: string; capability: string; status: string; depth: string | null; assessment: string; primary_source: string | null; sources: Source[]; as_of: string | null; needs_verification: boolean }
 export interface Competitor { slug: string; name: string; is_fieldpulse: boolean; summary: string }
 export interface Capability { slug: string; title: string; blurb: string; overall: string; sort_order: number }
-export interface DataShape { generated_at: string; competitors: Competitor[]; capabilities: Capability[]; offerings: Offering[] }
+export interface Detection { id: string; competitor: string | null; capability: string | null; what: string; kind: string; significance: string; source_url: string | null; first_seen: string | null; okf_path: string | null }
+export interface DataShape { generated_at: string; competitors: Competitor[]; capabilities: Capability[]; offerings: Offering[]; detections: Detection[] }
 
 // The 7 capability slugs, in display order — used to synthesize FieldPulse's row.
 const CAPABILITY_SLUGS = [
@@ -44,5 +45,5 @@ export const FIELDPULSE_OFFERINGS: Offering[] = CAPABILITY_SLUGS.map((capability
 // Populated by setData() in main.tsx before the first render (from loadData()).
 // Views read this live binding at render time; only Sidebar reads DATA directly
 // (for generated_at), the rest go through lib/model.ts.
-export let DATA: DataShape = { generated_at: "", competitors: [], capabilities: [], offerings: [] }
+export let DATA: DataShape = { generated_at: "", competitors: [], capabilities: [], offerings: [], detections: [] }
 export function setData(next: DataShape): void { DATA = next }

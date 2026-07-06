@@ -11,6 +11,7 @@ import {
   type Capability,
   type Offering,
   type Source,
+  type Detection,
   FIELDPULSE_COMPETITOR,
   FIELDPULSE_OFFERINGS,
 } from '@/data'
@@ -29,12 +30,24 @@ type OfferingRow = {
   as_of: string | null
   needs_verification: boolean
 }
+type DetectionRow = {
+  id: string
+  competitor: string | null
+  capability: string | null
+  what: string
+  kind: string
+  significance: string
+  source_url: string | null
+  first_seen: string | null
+  okf_path: string | null
+}
 
 export async function loadData(): Promise<DataShape> {
-  const [competitorRows, capabilityRows, offeringRows] = await Promise.all([
+  const [competitorRows, capabilityRows, offeringRows, detectionRows] = await Promise.all([
     q<CompetitorRow>('competitors'),
     q<CapabilityRow>('capabilities'),
     q<OfferingRow>('offerings'),
+    q<DetectionRow>('detections'),
   ])
 
   // FieldPulse first (the honest-gap column), then the real competitors.
@@ -62,9 +75,24 @@ export async function loadData(): Promise<DataShape> {
     ...FIELDPULSE_OFFERINGS,
   ]
 
+  // The "what's new" feed, newest first (the DB may return any order).
+  const detections: Detection[] = detectionRows
+    .map((d) => ({
+      id: d.id,
+      competitor: d.competitor,
+      capability: d.capability,
+      what: d.what,
+      kind: d.kind,
+      significance: d.significance,
+      source_url: d.source_url,
+      first_seen: d.first_seen,
+      okf_path: d.okf_path,
+    }))
+    .sort((a, b) => (b.first_seen ?? '').localeCompare(a.first_seen ?? ''))
+
   // "As of" reflects the freshest research date across the real cells.
   const dates = offeringRows.map((o) => o.as_of).filter((d): d is string => !!d)
   const generated_at = dates.length ? dates.sort().at(-1)! : ''
 
-  return { generated_at, competitors, capabilities, offerings }
+  return { generated_at, competitors, capabilities, offerings, detections }
 }
