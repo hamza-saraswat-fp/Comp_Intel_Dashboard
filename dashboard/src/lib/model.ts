@@ -1,13 +1,43 @@
-import { DATA, type Offering, type Competitor, type Capability } from "@/data"
+import { type Offering, type Competitor, type Capability, type DataShape } from "@/data"
 
-export const caps: Capability[] = DATA.capabilities.slice().sort((a, b) => a.sort_order - b.sort_order)
-export const TOTAL = caps.length
-export const capBySlug: Record<string, Capability> = Object.fromEntries(caps.map((c) => [c.slug, c]))
-export const compBySlug: Record<string, Competitor> = Object.fromEntries(DATA.competitors.map((c) => [c.slug, c]))
+// Derived view model. Previously computed at import from a static DATA; now
+// populated by initModel(data) (called in main.tsx after the Supabase fetch,
+// before the first render). The exported names are unchanged, so the views that
+// import them need no changes — they read these bindings at render time.
 
-const offMap: Record<string, Offering> = {}
-DATA.offerings.forEach((o) => { offMap[o.competitor + "::" + o.capability] = o })
+export let caps: Capability[] = []
+export let TOTAL = 0
+export let capBySlug: Record<string, Capability> = {}
+export let compBySlug: Record<string, Competitor> = {}
+
+let offMap: Record<string, Offering> = {}
 export const off = (c: string, cap: string): Offering => offMap[c + "::" + cap]
+
+export let fp: Competitor
+export let rivals: Competitor[] = []
+export let ORDER: Competitor[] = []
+export let leader: Competitor
+
+/** Install the fetched data and (re)compute every derived structure. Call once before render. */
+export function initModel(data: DataShape): void {
+  caps = data.capabilities.slice().sort((a, b) => a.sort_order - b.sort_order)
+  TOTAL = caps.length
+  capBySlug = Object.fromEntries(caps.map((c) => [c.slug, c]))
+  compBySlug = Object.fromEntries(data.competitors.map((c) => [c.slug, c]))
+
+  offMap = {}
+  data.offerings.forEach((o) => { offMap[o.competitor + "::" + o.capability] = o })
+
+  fp = data.competitors.find((c) => c.is_fieldpulse)!
+  rivals = data.competitors
+    .filter((c) => !c.is_fieldpulse)
+    .sort((a, b) => {
+      const sa = stats(a.slug), sb = stats(b.slug)
+      return sb.shipped - sa.shipped || sb.ml - sa.ml
+    })
+  ORDER = [fp, ...rivals]
+  leader = rivals[0]
+}
 
 export interface Stats { shipped: number; beta: number; announced: number; none: number; na: number; ml: number }
 export function stats(slug: string): Stats {
@@ -24,16 +54,6 @@ export function stats(slug: string): Stats {
   })
   return s
 }
-
-export const fp: Competitor = DATA.competitors.find((c) => c.is_fieldpulse)!
-export const rivals: Competitor[] = DATA.competitors
-  .filter((c) => !c.is_fieldpulse)
-  .sort((a, b) => {
-    const sa = stats(a.slug), sb = stats(b.slug)
-    return sb.shipped - sa.shipped || sb.ml - sa.ml
-  })
-export const ORDER: Competitor[] = [fp, ...rivals]
-export const leader: Competitor = rivals[0]
 
 export function score(o: Offering): number {
   if (o.status === "shipped") return o.depth === "market_leading" ? 4 : o.depth === "strong" ? 3 : 2
