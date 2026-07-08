@@ -1,0 +1,426 @@
+[
+ {
+  "id": "q01",
+  "question": "What's the actual monthly price for Housecall Pro's Basic plan, and what happens if I add a second user?",
+  "category": "single-doc",
+  "answerable": true,
+  "key_facts": [
+   "Basic plan is $79/mo billed monthly or $59/mo billed annually.",
+   "Basic plan is capped at 1 user.",
+   "Adding a second user forces an upgrade to Essentials, which is $149/mo billed annually."
+  ],
+  "gold_doc_ids": [
+   "research__pricing__housecall-pro"
+  ]
+ },
+ {
+  "id": "q02",
+  "question": "How is Jobber's AI Receptionist add-on priced now, and how did that change recently?",
+  "category": "single-doc",
+  "answerable": true,
+  "key_facts": [
+   "It was repriced from a flat $99/mo to a usage-based $29/mo including 30 conversations.",
+   "Additional conversations beyond the 30 included cost $0.79 each.",
+   "It remains included at no extra cost, with unlimited usage, on the Plus plan.",
+   "The change was first detected/logged on 2026-07-02."
+  ],
+  "gold_doc_ids": [
+   "detections__2026-07-02-jobber-ai-receptionist-add-on-repriced-from-flat-99-mo-"
+  ]
+ },
+ {
+  "id": "q03",
+  "question": "What actually makes ServiceTitan's Dispatch Pro different from a GPS-heuristic scheduling tool?",
+  "category": "single-doc",
+  "answerable": true,
+  "key_facts": [
+   "Dispatch Pro uses machine learning to predict job value and technician performance.",
+   "It recommends/auto-assigns technicians to maximize captured revenue, not just minimize drive time.",
+   "It is GA and sold as a paid Pro add-on with no public price."
+  ],
+  "gold_doc_ids": [
+   "offerings__servicetitan__dispatch-scheduling"
+  ]
+ },
+ {
+  "id": "q04",
+  "question": "Does Housecall Pro support custom fields on customer records?",
+  "category": "single-doc",
+  "answerable": true,
+  "key_facts": [
+   "Housecall Pro's help center explicitly states custom fields are not supported anywhere, including on customer profiles.",
+   "Users are told to 'vote' for the feature via support chat rather than being given a timeline."
+  ],
+  "gold_doc_ids": [
+   "research__teardowns__crm-communications"
+  ]
+ },
+ {
+  "id": "q05",
+  "question": "Is Jobber's in-app AI copilot generally available or still in beta as of mid-2026?",
+  "category": "single-doc",
+  "answerable": true,
+  "key_facts": [
+   "Jobber's copilot (Jobber AI Voice and Chat) is still officially labeled Beta in Jobber's help center as of mid-2026.",
+   "It is free to all US/Canada customers.",
+   "It launched Oct 1, 2024 as 'Jobber Copilot.'"
+  ],
+  "gold_doc_ids": [
+   "offerings__jobber__in-product-copilot"
+  ]
+ },
+ {
+  "id": "q06",
+  "question": "When did ServiceTitan's AP Automation (invoice OCR capture) actually go GA, and what does it do?",
+  "category": "single-doc",
+  "answerable": true,
+  "key_facts": [
+   "AP Automation was announced/GA on Jan 8, 2026.",
+   "It uses Titan Intelligence OCR to auto-fill vendor invoice fields from a scanned inbox.",
+   "It performs three-way matching against POs and receipts.",
+   "In-app bill payment was separately slated for a Spring 2026 rollout, not yet confirmed live."
+  ],
+  "gold_doc_ids": [
+   "offerings__servicetitan__back-office-automation"
+  ]
+ },
+ {
+  "id": "q07",
+  "question": "What's required before Jobber will auto-draft quotes on every new request without manual triggering?",
+  "category": "single-doc",
+  "answerable": true,
+  "key_facts": [
+   "Enabling Automatic Draft Quotes requires at least 3 quotes previously sent via 'Draft for me' so the model has examples.",
+   "'Draft for me' builds quotes with suggested line items from request details, saved templates, and past quotes."
+  ],
+  "gold_doc_ids": [
+   "offerings__jobber__back-office-automation"
+  ]
+ },
+ {
+  "id": "q08",
+  "question": "Can Housecall Pro's CSR AI handle text messages today, or only calls and web chat?",
+  "category": "single-doc",
+  "answerable": true,
+  "key_facts": [
+   "CSR AI answers calls and website chats 24/7.",
+   "Native SMS handling for CSR AI is listed as 'coming soon' per the help center, not yet shipped."
+  ],
+  "gold_doc_ids": [
+   "research__teardowns__crm-communications"
+  ]
+ },
+ {
+  "id": "q09",
+  "question": "What card and ACH processing rates does ServiceTitan publish for its payments product?",
+  "category": "single-doc",
+  "answerable": true,
+  "key_facts": [
+   "Published card processing rate is 2.9% + $0.30 (Stripe-based).",
+   "ACH rate is 0.8%.",
+   "ServiceTitan also integrates TSYS, NMI, and Adyen with negotiable interchange-plus pricing at scale."
+  ],
+  "gold_doc_ids": [
+   "research__teardowns__payments-financing"
+  ]
+ },
+ {
+  "id": "q10",
+  "question": "How much does the Profit Rhino managed price-book content cost inside Housecall Pro, and which trades does it cover?",
+  "category": "single-doc",
+  "answerable": true,
+  "key_facts": [
+   "Profit Rhino costs roughly $199/month flat regardless of how many trade books are loaded.",
+   "Coverage spans HVAC, Plumbing, Drain Cleaning, and Electrical.",
+   "Content updates land quarterly."
+  ],
+  "gold_doc_ids": [
+   "research__teardowns__price-book-catalog"
+  ]
+ },
+ {
+  "id": "q11",
+  "question": "What does Jobber charge for Instant Payout and how fast is the deposit?",
+  "category": "single-doc",
+  "answerable": true,
+  "key_facts": [
+   "Jobber's Instant Payout costs a 1% fee.",
+   "Funds land within seconds, including weekends and holidays, skipping the standard ~2-day window."
+  ],
+  "gold_doc_ids": [
+   "research__teardowns__payments-financing"
+  ]
+ },
+ {
+  "id": "q12",
+  "question": "Is ServiceTitan's 'Atlas in the Office' agentic feature set actually usable by customers yet?",
+  "category": "single-doc",
+  "answerable": true,
+  "key_facts": [
+   "The four Atlas office modules entered private preview in the Fall 2025 release, gated to select accounts via waitlist.",
+   "A May 28, 2026 customer success story shows Atlas building Adaptive Capacity booking rules in ~30 minutes vs. an estimated two weeks manually.",
+   "ServiceTitan's own marketing page still labels this 'Coming soon,' which is stale versus the private-preview reality."
+  ],
+  "gold_doc_ids": [
+   "offerings__servicetitan__agentic-workflow"
+  ]
+ },
+ {
+  "id": "q13",
+  "question": "Is ServiceTitan's AI lead in dispatch matched by an equivalent lead in AI marketing content generation?",
+  "category": "cross-doc",
+  "answerable": true,
+  "key_facts": [
+   "ServiceTitan is the clear market-leading vendor in ML-driven dispatch via Dispatch Pro.",
+   "In generative marketing content, ServiceTitan trails Housecall Pro and Jobber because its Email Content Generator and Audience Assistant are still 'Coming soon.'",
+   "No vendor is rated market-leading on generative marketing content."
+  ],
+  "gold_doc_ids": [
+   "capabilities__dispatch-scheduling",
+   "capabilities__marketing-content"
+  ]
+ },
+ {
+  "id": "q14",
+  "question": "Between Jobber's and Housecall Pro's AI phone receptionists, which is priced more transparently?",
+  "category": "cross-doc",
+  "answerable": true,
+  "key_facts": [
+   "Jobber's AI Receptionist is vendor-confirmed at $29/mo including 30 conversations, $0.79 per extra conversation.",
+   "Housecall Pro's CSR AI voice add-on has no public price; it's listed as 'contact for pricing.'",
+   "HCP markets CSR AI with a claimed 42x ROI instead of a disclosed price.",
+   "Jobber's Plus plan (roughly $449-599/mo annual) includes AI Receptionist with unlimited usage free."
+  ],
+  "gold_doc_ids": [
+   "research__pricing__jobber",
+   "research__pricing__housecall-pro"
+  ]
+ },
+ {
+  "id": "q15",
+  "question": "What unresolved verification issues exist around ServiceTitan's agentic office features and Housecall Pro's CSR AI pricing?",
+  "category": "cross-doc",
+  "answerable": true,
+  "key_facts": [
+   "ServiceTitan's agentic-workflow offering is flagged needs_verification because its autonomy claim rests on a single public customer story with limited access.",
+   "Housecall Pro's customer-contact-agent offering is flagged needs_verification because CSR AI's exact price isn't public.",
+   "Contractor reports suggest CSR AI costs roughly $200-500+/mo, unconfirmed by the vendor."
+  ],
+  "gold_doc_ids": [
+   "offerings__servicetitan__agentic-workflow",
+   "offerings__housecall-pro__customer-contact-agent"
+  ]
+ },
+ {
+  "id": "q16",
+  "question": "Does Housecall Pro's 'Write it for me' actually build a quote's line items the way Jobber's 'Draft for me' does?",
+  "category": "cross-doc",
+  "answerable": true,
+  "key_facts": [
+   "Jobber's 'Draft for me' generates a quote including suggested line items from the request, templates, and past quotes.",
+   "Housecall Pro's 'Write it for me' only drafts a text summary from line items the user has already entered.",
+   "Neither vendor does invoice/receipt OCR or photo-to-quote."
+  ],
+  "gold_doc_ids": [
+   "offerings__jobber__back-office-automation",
+   "offerings__housecall-pro__back-office-automation"
+  ]
+ },
+ {
+  "id": "q17",
+  "question": "As of mid-2026, is Jobber or ServiceTitan further ahead on AI back-office automation?",
+  "category": "cross-doc",
+  "answerable": true,
+  "key_facts": [
+   "Both are rated depth 'strong' for back-office automation as of their 2026 as_of dates.",
+   "Jobber's strength is generative quote construction via 'Draft for me.'",
+   "ServiceTitan's strength is AP Automation (OCR capture + 3-way matching), GA since Jan 8, 2026.",
+   "Neither is rated market-leading; no vendor has shipped the deeper document/data automation needed for that rating."
+  ],
+  "gold_doc_ids": [
+   "offerings__jobber__back-office-automation",
+   "offerings__servicetitan__back-office-automation",
+   "capabilities__back-office-automation"
+  ]
+ },
+ {
+  "id": "q18",
+  "question": "How does ServiceTitan's Pricebook Pro compare to Jobber's product list in managed content and estimated cost?",
+  "category": "cross-doc",
+  "answerable": true,
+  "key_facts": [
+   "Jobber's catalog is a flat Products & Services list with no managed/pre-built trade content, only a Home Depot in-quote lookup.",
+   "ServiceTitan's Pricebook Pro is a paid add-on offering pre-built multi-trade content curated via Titan Intelligence's Smart Start.",
+   "Pricebook Pro is reported (unverified by vendor) at roughly $200-500/month, not publicly listed by ServiceTitan."
+  ],
+  "gold_doc_ids": [
+   "research__teardowns__price-book-catalog",
+   "research__pricing__servicetitan"
+  ]
+ },
+ {
+  "id": "q19",
+  "question": "Since all three vendors now draft AI review responses, what actually separates ServiceTitan's reputation tools from the other two?",
+  "category": "cross-doc",
+  "answerable": true,
+  "key_facts": [
+   "All three vendors ship AI-drafted review responses, making this a mature, even field.",
+   "ServiceTitan monitors 60+ listing sites with review-to-technician/customer/job attribution.",
+   "Housecall Pro monitors only Google/Facebook and Jobber monitors only Google Business Profile.",
+   "ServiceTitan's Review Response Generator adds named tone controls (Professional/Casual/Enthusiastic), length options, and a custom-instruction field."
+  ],
+  "gold_doc_ids": [
+   "capabilities__reputation-reviews",
+   "offerings__servicetitan__reputation-reviews"
+  ]
+ },
+ {
+  "id": "q20",
+  "question": "Is two-way SMS messaging free on all Jobber plans, and how does that line up with the Grow tier's published price?",
+  "category": "cross-doc",
+  "answerable": true,
+  "key_facts": [
+   "Two-way SMS messaging in Jobber is gated to the Grow plan and up, per the CRM/communications teardown.",
+   "Jobber's Grow plan (Individual) lists at $149/mo billed annually per the pricing profile.",
+   "Housecall Pro's SMS-capable Chat inbox and Texting Number are not called out as similarly plan-gated."
+  ],
+  "gold_doc_ids": [
+   "research__teardowns__crm-communications",
+   "research__pricing__jobber"
+  ]
+ },
+ {
+  "id": "q21",
+  "question": "Across all 7 AI capability areas, in which ones is ServiceTitan actually rated 'market-leading' rather than just 'strong'?",
+  "category": "aggregate",
+  "answerable": true,
+  "key_facts": [
+   "ServiceTitan is rated depth=market_leading in customer-contact-agent (AI Voice Agent + Contact Center Pro).",
+   "ServiceTitan is rated depth=market_leading in dispatch-scheduling (Dispatch Pro ML engine).",
+   "ServiceTitan's back-office-automation, marketing-content, reputation-reviews, in-product-copilot, and agentic-workflow offerings are all rated below market_leading (strong, basic, or beta)."
+  ],
+  "gold_doc_ids": [
+   "offerings__servicetitan__customer-contact-agent",
+   "offerings__servicetitan__dispatch-scheduling",
+   "offerings__servicetitan__back-office-automation",
+   "offerings__servicetitan__marketing-content",
+   "offerings__servicetitan__reputation-reviews",
+   "offerings__servicetitan__in-product-copilot",
+   "offerings__servicetitan__agentic-workflow"
+  ]
+ },
+ {
+  "id": "q22",
+  "question": "Which competitor leads in each of FieldPulse's seven tracked AI capability areas?",
+  "category": "aggregate",
+  "answerable": true,
+  "key_facts": [
+   "ServiceTitan leads customer-contact-agent and is the sole market-leading vendor in dispatch-scheduling.",
+   "Housecall Pro leads in-product-copilot with the broadest free, default-on GA copilots (Analyst AI, Coach AI).",
+   "Jobber leads back-office-automation on the single most substantive capability, generative quote drafting.",
+   "No vendor is rated market-leading in marketing-content, reputation-reviews, back-office-automation, or agentic-workflow."
+  ],
+  "gold_doc_ids": [
+   "capabilities__customer-contact-agent",
+   "capabilities__dispatch-scheduling",
+   "capabilities__in-product-copilot",
+   "capabilities__back-office-automation",
+   "capabilities__marketing-content",
+   "capabilities__reputation-reviews",
+   "capabilities__agentic-workflow"
+  ]
+ },
+ {
+  "id": "q23",
+  "question": "How many of the three FSM competitors ship true ML-based dispatch today, and what do the other two use instead?",
+  "category": "aggregate",
+  "answerable": true,
+  "key_facts": [
+   "Only ServiceTitan ships true ML-driven dispatch (Dispatch Pro).",
+   "Jobber uses heuristic route optimization (drive time, traffic, road closures) with no ML technician assignment.",
+   "Housecall Pro has no native route optimization at all, relying on the third-party Beeline Routes integration.",
+   "Both Jobber and Housecall Pro are rated status 'none' on AI dispatch as defined."
+  ],
+  "gold_doc_ids": [
+   "capabilities__dispatch-scheduling"
+  ]
+ },
+ {
+  "id": "q24",
+  "question": "Has any competitor actually shipped fully autonomous, end-to-end office workflow agents yet, or is it all roadmap?",
+  "category": "aggregate",
+  "answerable": true,
+  "key_facts": [
+   "No FSM vendor has shipped true multi-step autonomous agents running entire office workflows end-to-end as of mid-2026.",
+   "ServiceTitan's 'Atlas in the Office' agentic modules are in private preview to select accounts, not broad GA.",
+   "Housecall Pro's CSR AI is genuinely autonomous but narrow, limited to single-domain call booking.",
+   "Jobber runs rule/trigger-based automations plus AI-drafted quotes with human oversight, not goal-seeking agents."
+  ],
+  "gold_doc_ids": [
+   "capabilities__agentic-workflow",
+   "offerings__servicetitan__agentic-workflow"
+  ]
+ },
+ {
+  "id": "q25",
+  "question": "List each vendor's AI voice/receptionist pricing as of July 2026, and flag which figures are vendor-confirmed vs. just reported.",
+  "category": "aggregate",
+  "answerable": true,
+  "key_facts": [
+   "Jobber AI Receptionist: $29/mo incl. 30 conversations, $0.79/extra conversation, vendor-confirmed on getjobber.com/pricing.",
+   "Housecall Pro CSR AI: price not publicly disclosed, listed as 'contact for pricing.'",
+   "ServiceTitan AI Voice Agent: usage-based per-call fee, exact rate not publicly disclosed anywhere."
+  ],
+  "gold_doc_ids": [
+   "research__pricing__jobber",
+   "research__pricing__housecall-pro",
+   "research__pricing__servicetitan"
+  ]
+ },
+ {
+  "id": "q26",
+  "question": "How many of the three competitors offer native custom fields on customer records, and how do their implementations differ?",
+  "category": "aggregate",
+  "answerable": true,
+  "key_facts": [
+   "Jobber offers 6 custom field types, scoped to client/property/quote/job/invoice/team, some client-facing and transferable.",
+   "ServiceTitan offers 3 custom field types across 8 record types, including surfacing on the Call Booking screen.",
+   "Housecall Pro has no custom fields at all — explicitly unsupported per its help center."
+  ],
+  "gold_doc_ids": [
+   "research__teardowns__crm-communications"
+  ]
+ },
+ {
+  "id": "q27",
+  "question": "How many employees does Housecall Pro currently have?",
+  "category": "unanswerable",
+  "answerable": false,
+  "key_facts": [],
+  "gold_doc_ids": []
+ },
+ {
+  "id": "q28",
+  "question": "What's on FieldPulse's own internal AI product roadmap for the next two quarters?",
+  "category": "unanswerable",
+  "answerable": false,
+  "key_facts": [],
+  "gold_doc_ids": []
+ },
+ {
+  "id": "q29",
+  "question": "How does Successware's AI dispatch feature compare to ServiceTitan's Dispatch Pro?",
+  "category": "unanswerable",
+  "answerable": false,
+  "key_facts": [],
+  "gold_doc_ids": []
+ },
+ {
+  "id": "q30",
+  "question": "What was ServiceTitan's total company revenue for fiscal year 2026?",
+  "category": "unanswerable",
+  "answerable": false,
+  "key_facts": [],
+  "gold_doc_ids": []
+ }
+]
