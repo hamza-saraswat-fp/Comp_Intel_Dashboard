@@ -11,21 +11,25 @@ import {
   type Capability,
   type Offering,
   type Source,
+  type FeatureMark,
+  type FeatureDef,
   FIELDPULSE_COMPETITOR,
   FIELDPULSE_OFFERINGS,
 } from '@/data'
 import { q } from './supabase'
 
 type CompetitorRow = { slug: string; name: string; summary: string }
-type CapabilityRow = { slug: string; title: string; blurb: string; overall: string; sort_order: number }
+type CapabilityRow = { slug: string; title: string; blurb: string; overall: string; sort_order: number; features: FeatureDef[] | null }
 type OfferingRow = {
   competitor: string
   capability: string
   status: string
   depth: string | null
   assessment: string
+  detail: string | null
   primary_source: string | null
   sources: Source[] | null
+  features: FeatureMark[] | null
   as_of: string | null
   needs_verification: boolean
 }
@@ -44,7 +48,7 @@ export async function loadData(): Promise<DataShape> {
   ]
 
   const capabilities: Capability[] = capabilityRows
-    .map((c) => ({ slug: c.slug, title: c.title, blurb: c.blurb, overall: c.overall, sort_order: c.sort_order }))
+    .map((c) => ({ slug: c.slug, title: c.title, blurb: c.blurb, overall: c.overall, sort_order: c.sort_order, features: c.features ?? [] }))
     .sort((a, b) => a.sort_order - b.sort_order)
 
   const offerings: Offering[] = [
@@ -54,8 +58,10 @@ export async function loadData(): Promise<DataShape> {
       status: o.status,
       depth: o.depth,
       assessment: o.assessment,
+      detail: o.detail,
       primary_source: o.primary_source,
       sources: o.sources ?? [],
+      features: o.features ?? [],
       as_of: o.as_of,
       needs_verification: o.needs_verification,
     })),
