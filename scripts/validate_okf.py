@@ -12,24 +12,26 @@ Exit 0 = conformant, 1 = not. Run before projecting.
 import pathlib
 import sys
 
-from okf_parser import RESERVED, parse_frontmatter
+from okf_parser import RESERVED, parse_frontmatter, features
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 KB = ROOT / "knowledge"
 ALLOWED_STATUS = {"shipped", "beta", "announced", "none", "not_researched"}
 ALLOWED_DEPTH = {"", "basic", "strong", "market_leading"}
+ALLOWED_FEATURE_VALUES = {"yes", "partial", "no", "unknown"}
 
 
 def main() -> int:
     errors, warnings, count = [], [], 0
     comp_slugs, cap_slugs = set(), set()
+    cap_features = {}  # capability slug -> set of feature keys
 
     for path in sorted(KB.rglob("*.md")):
         if path.name in RESERVED:
             continue
         count += 1
         rel = path.relative_to(ROOT)
-        fm, _ = parse_frontmatter(path.read_text(encoding="utf-8"))
+        fm, body = parse_frontmatter(path.read_text(encoding="utf-8"))
         if not fm:
             errors.append(f"{rel}: missing/unparseable frontmatter")
             continue
@@ -38,14 +40,16 @@ def main() -> int:
         if fm.get("type") == "Competitor":
             comp_slugs.add(fm.get("slug", path.stem))
         if fm.get("type") == "Capability":
-            cap_slugs.add(fm.get("slug", path.stem))
+            slug = fm.get("slug", path.stem)
+            cap_slugs.add(slug)
+            cap_features[slug] = {r["key"] for r in features(body)}
 
     # Second pass: offering cells reference real slugs + valid enums.
     for path in sorted((KB / "offerings").rglob("*.md")):
         if path.name in RESERVED:
             continue
         rel = path.relative_to(ROOT)
-        fm, _ = parse_frontmatter(path.read_text(encoding="utf-8"))
+        fm, body = parse_frontmatter(path.read_text(encoding="utf-8"))
         if fm.get("type") != "Offering":
             continue
         if fm.get("status", "not_researched") not in ALLOWED_STATUS:
@@ -56,6 +60,12 @@ def main() -> int:
             warnings.append(f"{rel}: competitor `{fm.get('competitor')}` has no concept doc")
         if fm.get("capability") not in cap_slugs:
             warnings.append(f"{rel}: capability `{fm.get('capability')}` has no concept doc")
+        defined = cap_features.get(fm.get("capability"), set())
+        for r in features(body):
+            if r["value"] not in ALLOWED_FEATURE_VALUES:
+                warnings.append(f"{rel}: feature `{r['key']}` value `{r['value']}` not in {sorted(ALLOWED_FEATURE_VALUES)}")
+            if defined and r["key"] not in defined:
+                warnings.append(f"{rel}: feature key `{r['key']}` not defined on capability `{fm.get('capability')}`")
 
     print(f"Checked {count} concept docs.")
     for w in warnings:
