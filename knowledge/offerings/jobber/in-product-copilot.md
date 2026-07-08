@@ -18,6 +18,15 @@ Jobber offers an in-app conversational assistant (Jobber Copilot, surfaced as 'J
 
 Launched Oct 1, 2024 as 'Jobber Copilot,' free and in beta to all US/Canada customers; Jobber's help center article is still titled 'Jobber AI Voice and Chat (Beta)' as of mid-2026, confirming continued beta status — the earlier draft assumption that it 'graduated into the bundle' is not supported by the vendor. Capabilities (per Jobber's launch PR): coaching, data analysis of operational efficiency/cash flow/workforce using 'historical data within Jobber,' marketing content, and product expertise; the LLM is trained on Jobber's own knowledge base. Note: Jobber's own launch materials describe it as using each customer's data, NOT aggregating insights across 400k+ businesses (the 400,000 figure is a customer count; the features/ai page references 'proven strategies from thousands of home service companies' as marketing framing, not a per-query data source) — the prior 'blends... aggregate insights from 400k+' claim was an overstatement and has been corrected. Depth 'strong' (genuine, well-marketed coach/analyst copilot, core to product) but status is beta, which is the key correction.
 
+# Features
+
+- query-data: yes
+- reports-lists: partial
+- coaching: yes
+- field-tech-qa: no
+- takes-actions: no
+- included-free: yes (free, still beta)
+
 # Citations
 
 [1] [The power of AI in your toolbox | Jobber](https://www.getjobber.com/features/ai/)
