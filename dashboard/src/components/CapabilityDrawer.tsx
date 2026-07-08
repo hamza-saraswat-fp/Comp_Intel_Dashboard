@@ -5,6 +5,7 @@ import { ChevronDown } from "lucide-react"
 import { LogoMark } from "./LogoMark"
 import { StatusPill } from "./StatusPill"
 import { MaturityDots } from "./MaturityDots"
+import { FeatureMatrix } from "./FeatureMatrix"
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetDescription } from "./ui/sheet"
 
 export function CapabilityDrawer({
@@ -71,6 +72,13 @@ export function CapabilityDrawer({
                 </div>
               )}
 
+              {cap.features.length > 0 && (
+                <div className="mb-5">
+                  <div className="mb-3 text-[11px] font-bold uppercase tracking-[0.06em] text-muted-foreground">Feature comparison</div>
+                  <FeatureMatrix cap={cap} />
+                </div>
+              )}
+
               <div className="mb-3 text-[11px] font-bold uppercase tracking-[0.06em] text-muted-foreground">All four players, ranked by depth</div>
               <div className="flex flex-col gap-2.5">
                 {ranked.map((c, i) => {
@@ -117,7 +125,7 @@ export function CapabilityDrawer({
 
                       {isOpen && hasDetail && (
                         <div className="border-t px-4 pb-4 pt-3">
-                          <p className="text-[13.5px] font-medium leading-[1.65] text-foreground/80">{o.assessment}</p>
+                          <p className="whitespace-pre-line text-[13.5px] font-medium leading-[1.65] text-foreground/80">{o.detail || o.assessment}</p>
                           {sources.length > 0 && (
                             <div className="mt-3 flex flex-wrap items-center gap-x-3.5 gap-y-1.5">
                               {sources.map((sc, idx) => (
