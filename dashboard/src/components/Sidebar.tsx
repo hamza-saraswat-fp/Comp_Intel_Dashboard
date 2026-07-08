@@ -1,4 +1,4 @@
-import { LayoutGrid, Bell, Layers } from "lucide-react"
+import { LayoutGrid, Bell, Layers, Sparkles } from "lucide-react"
 import { DATA } from "@/data"
 import { ORDER, caps, fmtDate } from "@/lib/model"
 import type { View } from "@/lib/nav"
@@ -35,6 +35,9 @@ export function Sidebar({
       </button>
       <button className={navCls(view.t === "whatsnew")} onClick={() => onView({ t: "whatsnew" })}>
         <Bell className="size-[15px] opacity-70" /> What&rsquo;s new
+      </button>
+      <button className={navCls(view.t === "chat")} onClick={() => onView({ t: "chat" })}>
+        <Sparkles className="size-[15px] opacity-70" /> Ask intel
       </button>
 
       <div className="px-2.5 pb-1.5 pt-4 text-[10px] font-bold uppercase tracking-[0.09em] text-muted-foreground">Competitors</div>
