@@ -1,5 +1,5 @@
 {
- "builtAt": "2026-07-07T20:43:08.150Z",
+ "builtAt": "2026-07-08T17:32:17.051Z",
  "model": "claude-sonnet-5",
  "docs": [
   {
@@ -1055,12 +1055,224 @@
    ],
    "synthetic": false,
    "abstract": "Scheduling and dispatch is the daily-use core of every FMS platform — it's where office staff spend most of their screen time and where the \"does this software actually save me ti…"
+  },
+  {
+   "id": "synthetic__m-00-scheduling-dispatch",
+   "title": "Scheduling & Dispatch Teardown: FieldRocket vs. ServiceGrove vs. TradeHalo",
+   "path": "corpus/synthetic/m-00-scheduling-dispatch.md",
+   "scales": [
+    "M",
+    "L"
+   ],
+   "tokens": 8308,
+   "sourceUrls": [
+    "https://community.fieldrocket.example.com/t/keyboard-shortcuts-power-users",
+    "https://community.tradehalo.example.com/t/auto-balance-moved-my-jobs",
+    "https://developer.servicegrove.example.com/api/sandbox",
+    "https://developer.tradehalo.example.com/api/roadmap",
+    "https://help.fieldrocket.example.com/dispatch-board/overview",
+    "https://help.fieldrocket.example.com/smartslot/how-suggestions-work",
+    "https://help.servicegrove.example.com/case-studies/regional-plumbing-windshield-time",
+    "https://help.servicegrove.example.com/grid-vs-map-view",
+    "https://help.servicegrove.example.com/routesense/opt-in-optimization",
+    "https://help.tradehalo.example.com/auto-balance/how-it-works",
+    "https://help.tradehalo.example.com/mobile-app/offline-support",
+    "https://www.fieldrocket.example.com/pricing",
+    "https://www.servicegrove.example.com/pricing",
+    "https://www.tradehalo.example.com/pricing"
+   ],
+   "synthetic": true,
+   "abstract": "> SYNTHETIC EVAL FIXTURE — generated distractor content, not real research."
+  },
+  {
+   "id": "synthetic__m-01-payments-financing-checkout",
+   "title": "Payments, Financing & Checkout: How ServiceGrove, TradeHalo, and DispatchOwl Stack Up",
+   "path": "corpus/synthetic/m-01-payments-financing-checkout.md",
+   "scales": [
+    "M",
+    "L"
+   ],
+   "tokens": 1747,
+   "sourceUrls": [],
+   "synthetic": true,
+   "abstract": "> SYNTHETIC EVAL FIXTURE — generated distractor content, not real research."
+  },
+  {
+   "id": "synthetic__m-02-crm-customer-communications",
+   "title": "CRM & Customer Communications Teardown: TradeHalo, DispatchOwl, and CrewNimbus",
+   "path": "corpus/synthetic/m-02-crm-customer-communications.md",
+   "scales": [
+    "M",
+    "L"
+   ],
+   "tokens": 5203,
+   "sourceUrls": [],
+   "synthetic": true,
+   "abstract": "> SYNTHETIC EVAL FIXTURE — generated distractor content, not real research."
+  },
+  {
+   "id": "synthetic__m-03-price-book-catalog-management",
+   "title": "Price book & catalog management: how DispatchOwl, CrewNimbus, and JobSprocket structure their pricing data",
+   "path": "corpus/synthetic/m-03-price-book-catalog-management.md",
+   "scales": [
+    "M",
+    "L"
+   ],
+   "tokens": 6027,
+   "sourceUrls": [
+    "https://help.crewn",
+    "https://help.dispatchowl.example.com/catalog/bulk-import-mapping-templates",
+    "https://help.dispatchowl.example.com/catalog/exporting-catalog-data",
+    "https://help.dispatchowl.example.com/catalog/owl-catalog-overview",
+    "https://help.dispatchowl.example.com/plans/growth-plan-features"
+   ],
+   "synthetic": true,
+   "abstract": "> SYNTHETIC EVAL FIXTURE — generated distractor content, not real research."
+  },
+  {
+   "id": "synthetic__m-04-reporting-analytics",
+   "title": "Reporting & Analytics Teardown: CrewNimbus, JobSprocket, and RouteFalcon",
+   "path": "corpus/synthetic/m-04-reporting-analytics.md",
+   "scales": [
+    "M",
+    "L"
+   ],
+   "tokens": 2353,
+   "sourceUrls": [],
+   "synthetic": true,
+   "abstract": "> SYNTHETIC EVAL FIXTURE — generated distractor content, not real research."
+  },
+  {
+   "id": "synthetic__m-05-estimates-invoices",
+   "title": "Estimates & Invoices: A Field Teardown of JobSprocket, RouteFalcon, and ProValve",
+   "path": "corpus/synthetic/m-05-estimates-invoices.md",
+   "scales": [
+    "M",
+    "L"
+   ],
+   "tokens": 3202,
+   "sourceUrls": [],
+   "synthetic": true,
+   "abstract": "> SYNTHETIC EVAL FIXTURE — generated distractor content, not real research."
+  },
+  {
+   "id": "synthetic__nearmiss-housecall-pro-integrations-api",
+   "title": "Housecall Pro — Integrations & API Teardown",
+   "path": "corpus/synthetic/nearmiss-housecall-pro-integrations-api.md",
+   "scales": [
+    "M",
+    "L"
+   ],
+   "tokens": 3982,
+   "sourceUrls": [],
+   "synthetic": true,
+   "abstract": "> SYNTHETIC EVAL FIXTURE — generated distractor content, not real research."
+  },
+  {
+   "id": "synthetic__nearmiss-housecall-pro-timesheets-job-costing",
+   "title": "Housecall Pro: Timesheets & Job Costing Teardown",
+   "path": "corpus/synthetic/nearmiss-housecall-pro-timesheets-job-costing.md",
+   "scales": [
+    "M",
+    "L"
+   ],
+   "tokens": 5952,
+   "sourceUrls": [],
+   "synthetic": true,
+   "abstract": "> SYNTHETIC EVAL FIXTURE — generated distractor content, not real research."
+  },
+  {
+   "id": "synthetic__nearmiss-jobber-integrations-api",
+   "title": "Jobber Integrations & API: Where the Platform Actually Opens Up",
+   "path": "corpus/synthetic/nearmiss-jobber-integrations-api.md",
+   "scales": [
+    "M",
+    "L"
+   ],
+   "tokens": 5072,
+   "sourceUrls": [],
+   "synthetic": true,
+   "abstract": "> SYNTHETIC EVAL FIXTURE — generated distractor content, not real research."
+  },
+  {
+   "id": "synthetic__nearmiss-jobber-inventory-purchase-orders",
+   "title": "Jobber Inventory & Purchase Orders: A Field Teardown",
+   "path": "corpus/synthetic/nearmiss-jobber-inventory-purchase-orders.md",
+   "scales": [
+    "M",
+    "L"
+   ],
+   "tokens": 5025,
+   "sourceUrls": [
+    "https://community.jobber.example.com/t/multi-location-inventory-wishlist",
+    "https://community.jobber.example.com/t/partial-po-receiving-workaround",
+    "https://developer.jobber.example.com/docs/inventory-api-reference",
+    "https://help.jobber.example.com/articles/kit-builder-limitations",
+    "https://help.jobber.example.com/articles/po-composer-getting-started",
+    "https://help.jobber.example.com/articles/reorder-assist-faq",
+    "https://help.jobber.example.com/articles/stocksync-overview",
+    "https://help.jobber.example.com/articles/vendor-hub-setup",
+    "https://pricing.jobber.example.com/plans/foundation-momentum-summit",
+    "https://releasenotes.jobber.example.com/2026-summer-catalog-sync-beta"
+   ],
+   "synthetic": true,
+   "abstract": "> SYNTHETIC EVAL FIXTURE — generated distractor content, not real research."
+  },
+  {
+   "id": "synthetic__nearmiss-jobber-memberships-service-agreements",
+   "title": "Competitor Teardown: Jobber's Memberships & Service Agreements Stack",
+   "path": "corpus/synthetic/nearmiss-jobber-memberships-service-agreements.md",
+   "scales": [
+    "M",
+    "L"
+   ],
+   "tokens": 1750,
+   "sourceUrls": [],
+   "synthetic": true,
+   "abstract": "> SYNTHETIC EVAL FIXTURE — generated distractor content, not real research."
+  },
+  {
+   "id": "synthetic__nearmiss-jobber-timesheets-job-costing",
+   "title": "Jobber Timesheets & Job Costing: A Field Ops Teardown",
+   "path": "corpus/synthetic/nearmiss-jobber-timesheets-job-costing.md",
+   "scales": [
+    "M",
+    "L"
+   ],
+   "tokens": 4816,
+   "sourceUrls": [],
+   "synthetic": true,
+   "abstract": "> SYNTHETIC EVAL FIXTURE — generated distractor content, not real research."
+  },
+  {
+   "id": "synthetic__nearmiss-servicetitan-mobile-technician-app",
+   "title": "Teardown: ServiceTitan's Mobile Technician App vs. FieldPulse",
+   "path": "corpus/synthetic/nearmiss-servicetitan-mobile-technician-app.md",
+   "scales": [
+    "M",
+    "L"
+   ],
+   "tokens": 5689,
+   "sourceUrls": [
+    "https://apps.examplestore.example.com/servicetitan-technician/reviews",
+    "https://community.fieldservicehub.example.com/threads/servicetitan-voicelog-accuracy",
+    "https://help.fieldrocket.example.com/servicetitan-mobile-overview",
+    "https://help.fieldrocket.example.com/servicetitan-proofpacket-photo-tagging",
+    "https://help.fieldrocket.example.com/servicetitan-training-content-attachment",
+    "https://partners.titanhelp.example.com/integration-docs/inventory-mapping",
+    "https://support.titanhelp.example.com/mobile/offline-sync-behavior",
+    "https://support.titanhelp.example.com/payments/deposit-collection-flow",
+    "https://support.titanhelp.example.com/quotebuilder/non-catalog-parts-approval",
+    "https://webinars.titanpartners.example.com/transcript/techscore-badges-pilot"
+   ],
+   "synthetic": true,
+   "abstract": "> SYNTHETIC EVAL FIXTURE — generated distractor content, not real research."
   }
  ],
  "scaleTokens": {
   "S0": 25942,
   "S": 107027,
-  "M": 107027,
-  "L": 107027
+  "M": 166153,
+  "L": 166153
  }
 }

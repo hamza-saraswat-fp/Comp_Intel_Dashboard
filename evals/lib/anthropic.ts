@@ -54,6 +54,9 @@ export async function runAnswer(opts: {
   const result = streamText({
     model: anthropic(ANSWER_MODEL),
     maxOutputTokens: MAX_OUTPUT_TOKENS,
+    // cacheControl can only sit on a system message inside `messages` (not the
+    // top-level `system` param), so we opt into that explicitly.
+    allowSystemInMessages: true,
     messages: opts.messages,
     ...(opts.tools ? { tools: opts.tools, toolChoice: 'auto' as const } : {}),
     ...(opts.stopWhen ? { stopWhen: opts.stopWhen } : {}),

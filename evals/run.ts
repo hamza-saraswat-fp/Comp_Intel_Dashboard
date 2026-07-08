@@ -18,7 +18,10 @@ import { makeRagCondition } from './conditions/rag.ts';
 import type { Condition } from './conditions/types.ts';
 import type { GoldQuestion, RunRecord, Scale } from './lib/types.ts';
 
-const COLD_SAMPLES = 3; // q1 is naturally cold; 2 extra nonce-busted cold samples per cell
+// q1 is the cold sample (first question in a session — the realistic cold case).
+// Trimmed run uses 1 to avoid paying extra full-price cache writes; the warm
+// path (q2+) is the common case and is what the cost comparison hinges on.
+const COLD_SAMPLES = Number(process.env.EVAL_COLD_SAMPLES ?? 1);
 
 function arg(name: string, fallback?: string): string {
   const i = process.argv.indexOf(`--${name}`);

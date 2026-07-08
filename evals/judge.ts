@@ -7,11 +7,10 @@
 import 'dotenv/config';
 import { appendFileSync, existsSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
-import { anthropic } from '@ai-sdk/anthropic';
-import { generateText, Output } from 'ai';
 import { z } from 'zod';
 import { EVALS_ROOT, loadManifest, readDocText } from './lib/corpus.ts';
 import { JUDGE_MODEL } from './lib/anthropic.ts';
+import { generateJson } from './lib/json-out.ts';
 import type { GoldQuestion, JudgedRecord, RunRecord } from './lib/types.ts';
 
 const runId = (() => {
@@ -58,13 +57,9 @@ function blind(text: string): { blinded: string; urls: string[] } {
 }
 
 const CorrectnessSchema = z.object({
-  facts: z.array(
-    z.object({ fact: z.string(), covered: z.enum(['yes', 'partial', 'no']) }),
-  ),
-  unsupported_claims: z
-    .array(z.string())
-    .describe('substantive factual claims in the answer that are NOT among the listed key facts and NOT mere framing'),
-  refusal: z.boolean().describe('true if the answer declines/says the intel base does not cover it'),
+  coverage: z.array(z.enum(['yes', 'partial', 'no'])), // one entry per key fact, in order
+  unsupported_claims: z.array(z.string()),
+  refusal: z.boolean(),
 });
 
 const GroundednessSchema = z.object({
@@ -95,17 +90,15 @@ for (const r of seededShuffle(records, runId)) {
   const q = qById.get(r.qId);
   if (!q) continue;
 
+  try {
   const { blinded, urls } = blind(r.text);
 
   // --- Judge call 1: correctness against the key-fact checklist (blind) ---
-  const correctness = await generateText({
-    model: anthropic(JUDGE_MODEL),
-    maxOutputTokens: 2000,
-    output: Output.object({ schema: CorrectnessSchema }),
-    messages: [
-      {
-        role: 'user',
-        content: `You are grading an answer against a key-fact checklist. Ignore style, length, and formatting entirely; grade ONLY against the checklist. Citation markers like [S1] are normalized artifacts — ignore them.
+  const { value: c } = await generateJson({
+    model: JUDGE_MODEL,
+    maxOutputTokens: 4000,
+    schema: CorrectnessSchema,
+    prompt: `You are grading an answer against a key-fact checklist. Ignore style, length, and formatting entirely; grade ONLY against the checklist. Citation markers like [S1] are normalized artifacts — ignore them.
 
 Question: ${q.question}
 
@@ -117,14 +110,14 @@ Answer to grade:
 ${blinded}
 """
 
-For each key fact, mark covered yes/partial/no. List substantive factual claims that go beyond the key facts as unsupported_claims (framing, hedges, and restatements of the question don't count). Set refusal=true if the answer declines or says the knowledge base doesn't cover it.`,
-      },
-    ],
-  });
-  const c = (correctness as any).output as z.infer<typeof CorrectnessSchema>;
+Return EXACTLY this JSON shape (no other keys):
+{"coverage": ["yes"|"partial"|"no", ...one entry per key fact IN THE LISTED ORDER], "unsupported_claims": ["..."], "refusal": true|false}
 
-  const yes = c.facts.filter((f) => f.covered === 'yes').length;
-  const partial = c.facts.filter((f) => f.covered === 'partial').length;
+coverage: for each key fact, in order, whether the answer covers it. unsupported_claims: substantive factual claims in the answer beyond the key facts (ignore framing, hedges, restatements). refusal: true if the answer declines or says the knowledge base doesn't cover it. If there are no key facts, coverage is [].`,
+  });
+
+  const yes = c.coverage.filter((f) => f === 'yes').length;
+  const partial = c.coverage.filter((f) => f === 'partial').length;
   const factRecall = q.key_facts.length === 0 ? (c.refusal ? 1 : 0) : (yes + 0.5 * partial) / q.key_facts.length;
   const supported = yes + partial;
   const factPrecision =
@@ -139,15 +132,12 @@ For each key fact, mark covered yes/partial/no. List substantive factual claims 
     const referenceIds = citedDocIds.size > 0 ? [...citedDocIds] : q.gold_doc_ids;
     const refDocs = manifest.docs.filter((d) => referenceIds.includes(d.id));
     if (refDocs.length > 0) {
-      const refText = refDocs.map((d) => `# ${d.title}\n${readDocText(d)}`).join('\n\n').slice(0, 150_000);
-      const g = await generateText({
-        model: anthropic(JUDGE_MODEL),
-        maxOutputTokens: 2000,
-        output: Output.object({ schema: GroundednessSchema }),
-        messages: [
-          {
-            role: 'user',
-            content: `Break the answer below into its substantive factual claims (max 10) and mark each claim supported=true only if the reference documents support it.
+      const refText = refDocs.map((d) => `# ${d.title}\n${readDocText(d)}`).join('\n\n').slice(0, 60_000);
+      const { value: g } = await generateJson({
+        model: JUDGE_MODEL,
+        maxOutputTokens: 4000,
+        schema: GroundednessSchema,
+        prompt: `Break the answer below into its substantive factual claims (max 10) and mark each claim supported=true only if the reference documents support it.
 
 Reference documents:
 """
@@ -157,11 +147,11 @@ ${refText}
 Answer:
 """
 ${blinded}
-"""`,
-          },
-        ],
+"""
+
+Return EXACTLY this JSON shape: {"claims": [{"claim": "...", "supported": true|false}, ...]}`,
       });
-      grounded = ((g as any).output as z.infer<typeof GroundednessSchema>).claims;
+      grounded = g.claims;
       groundednessRate = grounded.length ? grounded.filter((x) => x.supported).length / grounded.length : null;
     }
   }
@@ -191,7 +181,7 @@ ${blinded}
     scale: r.scale,
     qId: r.qId,
     repeat: r.repeat,
-    factsCovered: c.facts.map((f) => f.covered),
+    factsCovered: c.coverage,
     factRecall,
     unsupportedClaims: c.unsupported_claims,
     factPrecision,
@@ -209,5 +199,11 @@ ${blinded}
   console.log(
     `judged ${key}: recall ${factRecall.toFixed(2)} precision ${factPrecision.toFixed(2)} refusal=${c.refusal}`,
   );
+  } catch (err: any) {
+    // One unjudgeable record must not kill the run; log and continue (resumable).
+    const msg = String(err?.message ?? err).slice(0, 300);
+    console.error(`✗ judge ${key}: ${msg}`);
+    appendFileSync(join(resultsDir, 'judge-errors.jsonl'), JSON.stringify({ key, error: msg }) + '\n');
+  }
 }
 console.log('judging complete.');

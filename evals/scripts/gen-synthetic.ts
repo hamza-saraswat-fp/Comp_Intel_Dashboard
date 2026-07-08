@@ -10,11 +10,12 @@
 import 'dotenv/config';
 import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
+import { streamText } from 'ai';
 import { anthropic } from '@ai-sdk/anthropic';
-import { generateText, Output } from 'ai';
 import { z } from 'zod';
 import { EVALS_ROOT, loadManifest } from '../lib/corpus.ts';
 import { buildSearchIndex } from '../lib/search.ts';
+import { generateJson } from '../lib/json-out.ts';
 import type { GoldQuestion } from '../lib/types.ts';
 
 const SYNTH_DIR = join(EVALS_ROOT, 'corpus/synthetic');
@@ -58,15 +59,13 @@ const NEAR_MISS = [
 const questions: GoldQuestion[] = JSON.parse(readFileSync(join(EVALS_ROOT, 'questions.json'), 'utf8'));
 const goldFacts = questions.flatMap((q) => q.key_facts);
 
-const DocSchema = z.object({ markdown: z.string() });
-
 async function generateDistractor(competitors: string[], topic: string, scaleTag: 'M' | 'L', slug: string) {
   const outPath = join(SYNTH_DIR, `${slug}.md`);
   if (existsSync(outPath)) return outPath;
-  const { output } = await generateText({
+  // Plain markdown generation (streamText dodges the non-streaming large-output guard).
+  const stream = streamText({
     model: anthropic('claude-sonnet-5'),
     maxOutputTokens: 12000,
-    output: Output.object({ schema: DocSchema }),
     messages: [
       {
         role: 'user',
@@ -91,12 +90,14 @@ synthetic: true
 - Structure: H1 title, intro, "## At a glance" comparison table, 4-5 numbered "## N · Section" sections with per-competitor bullet blocks, "## What it means for FieldPulse", "## Questions this raises", "## Source pages" (invent plausible-looking but clearly fictional URLs on example.com subdomains, e.g. https://help.fieldrocket.example.com/...).
 - Length: 3,000-4,500 words.
 - CRITICAL non-collision rules: do NOT assert anything about these specific subjects: real prices/plans of Jobber, Housecall Pro, or ServiceTitan; their real product names (Dispatch Pro, Pricebook Pro, CSR AI, AI Receptionist, Copilot, Titan Intelligence, Atlas, Marketing Pro, Wisetack); their estimate/invoice/price-book/dispatch/reporting/pricing facts. All invented numbers must avoid these values: ${JSON.stringify([...new Set(goldFacts.flatMap((f) => f.match(/\$?\d[\d,.]*%?/g) ?? []))]).slice(0, 1500)}.
-Return only the full markdown document.`,
+Return only the full markdown document, starting with the frontmatter --- line. No code fences.`,
       },
     ],
   });
-  writeFileSync(outPath, (output as any).markdown);
-  console.log(`generated ${slug}.md`);
+  let md = (await stream.text).trim();
+  md = md.replace(/^```(?:markdown)?\s*\n?/, '').replace(/\n?```\s*$/, ''); // strip stray fences
+  writeFileSync(outPath, md);
+  console.log(`generated ${slug}.md (${md.length} chars)`);
   return outPath;
 }
 
@@ -151,18 +152,12 @@ for (const q of questions) {
   const hits = idx.search(q.question, 3);
   for (const h of hits) {
     const text = idx.readDoc(h.id)!;
-    const { output } = await generateText({
-      model: anthropic('claude-sonnet-5'),
+    const { value: v } = await generateJson({
+      model: 'claude-sonnet-5',
       maxOutputTokens: 800,
-      output: Output.object({ schema: AnswerableSchema }),
-      messages: [
-        {
-          role: 'user',
-          content: `Question: ${q.question}\n\nGold facts (the true answer): ${JSON.stringify(q.key_facts)}\n\nDocument:\n"""${text.slice(0, 30000)}"""\n\ncan_answer: could this document be used to answer the question, fully OR partially? contradicts_facts: list any gold facts this document asserts a COMPETING value for (same subject, different value).`,
-        },
-      ],
+      schema: AnswerableSchema,
+      prompt: `Question: ${q.question}\n\nGold facts (the true answer): ${JSON.stringify(q.key_facts)}\n\nDocument:\n"""${text.slice(0, 30000)}"""\n\nReturn EXACTLY this JSON: {"can_answer": true|false, "contradicts_facts": ["..."]}\ncan_answer: could this document be used to answer the question, fully OR partially? contradicts_facts: list any gold facts this document asserts a COMPETING value for (same subject, different value).`,
     });
-    const v = (output as any) as z.infer<typeof AnswerableSchema>;
     if (v.can_answer || v.contradicts_facts.length > 0) {
       failures++;
       console.error(`✗ GATE FAIL: ${h.id} vs ${q.id} — can_answer=${v.can_answer} contradicts=${JSON.stringify(v.contradicts_facts)}`);
