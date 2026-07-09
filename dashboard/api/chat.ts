@@ -12,11 +12,14 @@
 // OpenRouter's cache_control; it applies to Anthropic models and is ignored by others.
 import { createOpenRouter } from '@openrouter/ai-sdk-provider';
 import { streamText, convertToModelMessages, type UIMessage } from 'ai';
-import { INTEL_PACK } from './_intel-pack';
-import { SYSTEM_RULES, PREAMBLE } from './_prompt';
-import { saveChat } from './_supabase';
+// Relative imports carry an explicit .js extension: the dashboard package is ESM
+// ("type": "module"), so Vercel runs these functions as ESM, where Node requires the
+// extension on relative specifiers (it maps to the emitted _intel-pack.js, etc.).
+import { INTEL_PACK } from './_intel-pack.js';
+import { SYSTEM_RULES, PREAMBLE } from './_prompt.js';
+import { saveChat } from './_supabase.js';
 
-export const config = { maxDuration: 60 };
+export const config = { maxDuration: 120 };
 
 const SYSTEM = SYSTEM_RULES + PREAMBLE + INTEL_PACK;
 const openrouter = createOpenRouter({ apiKey: process.env.OPENROUTER_API_KEY });
@@ -57,6 +60,9 @@ export async function POST(req: Request): Promise<Response> {
 
   return result.toUIMessageStreamResponse({
     originalMessages: messages,
+    // Surface the real error to the client (this is an internal, gated tool) instead of the
+    // SDK's masked "an error occurred", so any failure is self-diagnosing on screen.
+    onError: (error) => (error instanceof Error ? error.message : String(error)),
     onFinish: ({ messages }) => {
       // Fire-and-forget; a DB hiccup must not fail the stream.
       void saveChat({ id, title: firstUserText(messages), messages });
