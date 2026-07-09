@@ -1,0 +1,28 @@
+{
+  "name": "ask-intel-retrieval-evals",
+  "private": true,
+  "type": "module",
+  "description": "Empirical comparison of knowledge-access architectures for the Ask Intel chat: full-context stuffing vs agentic retrieval vs vector RAG, across corpus scales.",
+  "scripts": {
+    "build-manifest": "tsx scripts/build-manifest.ts",
+    "gen-questions": "tsx scripts/gen-questions.ts",
+    "gen-synthetic": "tsx scripts/gen-synthetic.ts",
+    "build-index": "tsx scripts/build-index.ts",
+    "run": "tsx run.ts",
+    "judge": "tsx judge.ts",
+    "report": "tsx report.ts"
+  },
+  "dependencies": {
+    "@ai-sdk/anthropic": "^3.0.94",
+    "@ai-sdk/openai": "^3.0.81",
+    "ai": "^6.0.220",
+    "dotenv": "^17.0.0",
+    "minisearch": "^7.2.0",
+    "zod": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.13.2",
+    "tsx": "^4.22.4",
+    "typescript": "^6.0.3"
+  }
+}

@@ -1,0 +1,1278 @@
+{
+ "builtAt": "2026-07-08T17:32:17.051Z",
+ "model": "claude-sonnet-5",
+ "docs": [
+  {
+   "id": "capabilities__agentic-workflow",
+   "title": "Agentic Workflow Automation (emerging)",
+   "path": "corpus/real/capabilities/agentic-workflow.md",
+   "scales": [
+    "S0",
+    "S",
+    "M",
+    "L"
+   ],
+   "tokens": 481,
+   "sourceUrls": [],
+   "synthetic": false,
+   "abstract": "No FSM vendor has shipped true multi-step, goal-seeking agents that run entire office workflows end-to-end — the category is still emergent. ServiceTitan has by far the most ambit…"
+  },
+  {
+   "id": "capabilities__back-office-automation",
+   "title": "AI Back-Office Automation",
+   "path": "corpus/real/capabilities/back-office-automation.md",
+   "scales": [
+    "S0",
+    "S",
+    "M",
+    "L"
+   ],
+   "tokens": 484,
+   "sourceUrls": [],
+   "synthetic": false,
+   "abstract": "All three vendors ship only assistive, narrow AI back-office help today; none has shipped the deeper document/data automation (invoice OCR capture, autonomous AR/data entry) that…"
+  },
+  {
+   "id": "capabilities__customer-contact-agent",
+   "title": "AI Customer-Contact Agent",
+   "path": "corpus/real/capabilities/customer-contact-agent.md",
+   "scales": [
+    "S0",
+    "S",
+    "M",
+    "L"
+   ],
+   "tokens": 506,
+   "sourceUrls": [],
+   "synthetic": false,
+   "abstract": "All three vendors now ship genuine AI customer-contact agents that answer inbound calls AND text/chat 24/7, qualify leads, and book directly into the calendar — this is one of the…"
+  },
+  {
+   "id": "capabilities__dispatch-scheduling",
+   "title": "AI Dispatch & Scheduling",
+   "path": "corpus/real/capabilities/dispatch-scheduling.md",
+   "scales": [
+    "S0",
+    "S",
+    "M",
+    "L"
+   ],
+   "tokens": 474,
+   "sourceUrls": [],
+   "synthetic": false,
+   "abstract": "ServiceTitan is the clear and lone leader in true ML-driven dispatch: Dispatch Pro (Titan Intelligence) is GA and uses machine learning to predict job value and technician perform…"
+  },
+  {
+   "id": "capabilities__in-product-copilot",
+   "title": "In-Product AI Copilot",
+   "path": "corpus/real/capabilities/in-product-copilot.md",
+   "scales": [
+    "S0",
+    "S",
+    "M",
+    "L"
+   ],
+   "tokens": 487,
+   "sourceUrls": [],
+   "synthetic": false,
+   "abstract": "All three vendors ship a conversational, plain-English in-app assistant, but they sit at different maturity points. Housecall Pro leads on this specific capability: Analyst AI (da…"
+  },
+  {
+   "id": "capabilities__marketing-content",
+   "title": "AI Marketing & Content",
+   "path": "corpus/real/capabilities/marketing-content.md",
+   "scales": [
+    "S0",
+    "S",
+    "M",
+    "L"
+   ],
+   "tokens": 507,
+   "sourceUrls": [],
+   "synthetic": false,
+   "abstract": "On AI marketing-content generation, the two SMB-focused players lead today: Housecall Pro and Jobber both ship genuine LLM content creation that drafts marketing emails, SMS, soci…"
+  },
+  {
+   "id": "capabilities__reputation-reviews",
+   "title": "AI Reputation & Reviews",
+   "path": "corpus/real/capabilities/reputation-reviews.md",
+   "scales": [
+    "S0",
+    "S",
+    "M",
+    "L"
+   ],
+   "tokens": 463,
+   "sourceUrls": [],
+   "synthetic": false,
+   "abstract": "All three vendors genuinely ship the rarer capability here — AI-DRAFTED review responses, not just automated solicitation — which makes this a relatively even, mature field. Servi…"
+  },
+  {
+   "id": "competitors__housecall-pro",
+   "title": "Housecall Pro",
+   "path": "corpus/real/competitors/housecall-pro.md",
+   "scales": [
+    "S0",
+    "S",
+    "M",
+    "L"
+   ],
+   "tokens": 453,
+   "sourceUrls": [],
+   "synthetic": false,
+   "abstract": "Housecall Pro has built one of the most aggressively marketed AI stories in the SMB FSM segment, organized around a role-based \"AI Team\" metaphor (CSR AI, Analyst AI, Coach AI, Ma…"
+  },
+  {
+   "id": "competitors__jobber",
+   "title": "Jobber",
+   "path": "corpus/real/competitors/jobber.md",
+   "scales": [
+    "S0",
+    "S",
+    "M",
+    "L"
+   ],
+   "tokens": 463,
+   "sourceUrls": [],
+   "synthetic": false,
+   "abstract": "Jobber has moved aggressively into AI for the SMB home-services segment, branding nearly everything as \"Jobber AI\" (with marketing/help docs still using legacy names like Copilot,…"
+  },
+  {
+   "id": "competitors__servicetitan",
+   "title": "ServiceTitan",
+   "path": "corpus/real/competitors/servicetitan.md",
+   "scales": [
+    "S0",
+    "S",
+    "M",
+    "L"
+   ],
+   "tokens": 490,
+   "sourceUrls": [],
+   "synthetic": false,
+   "abstract": "ServiceTitan has the broadest and deepest AI footprint of any FSM vendor, anchored by Titan Intelligence (TI) — a purpose-built AI engine — and Atlas, its conversational AI assist…"
+  },
+  {
+   "id": "detections__2026-07-02-jobber-ai-receptionist-add-on-repriced-from-flat-99-mo-",
+   "title": "detections__2026-07-02-jobber-ai-receptionist-add-on-repriced-from-flat-99-mo-",
+   "path": "corpus/real/detections/2026-07-02-jobber-ai-receptionist-add-on-repriced-from-flat-99-mo-.md",
+   "scales": [
+    "S0",
+    "S",
+    "M",
+    "L"
+   ],
+   "tokens": 330,
+   "sourceUrls": [
+    "https://help.getjobber.com/hc/en-us/articles/25315927533847-Receptionist-powered-by-Jobber-AI"
+   ],
+   "synthetic": false,
+   "abstract": "Detected by comp-intel monitor. AI Receptionist add-on repriced from flat $99/mo to usage-based $29/mo (includes 30 conversations, then $0.79/additional conversation); still inclu…"
+  },
+  {
+   "id": "detections__index",
+   "title": "Detections — the \"what's new\" feed",
+   "path": "corpus/real/detections/index.md",
+   "scales": [
+    "S0",
+    "S",
+    "M",
+    "L"
+   ],
+   "tokens": 170,
+   "sourceUrls": [],
+   "synthetic": false,
+   "abstract": "Dated records of competitor AI features the monitor (compintelmonitor) detected, landed here as reviewed PRs (IAI-231). Each <date>-<slug>.md is type: Detection and is projected i…"
+  },
+  {
+   "id": "offerings__housecall-pro__agentic-workflow",
+   "title": "Assessment",
+   "path": "corpus/real/offerings/housecall-pro/agentic-workflow.md",
+   "scales": [
+    "S0",
+    "S",
+    "M",
+    "L"
+   ],
+   "tokens": 814,
+   "sourceUrls": [
+    "https://help.housecallpro.com/en/articles/9311875-ai-team-overview",
+    "https://www.housecallpro.com/features/ai-team/",
+    "https://www.housecallpro.com/features/ai-team/csr-ai/"
+   ],
+   "synthetic": false,
+   "abstract": "Housecall Pro markets an autonomous 'AI Team' of virtual staff, but only one member — CSR AI — is genuinely agentic: it autonomously answers calls, chats, qualifies leads, schedul…"
+  },
+  {
+   "id": "offerings__housecall-pro__back-office-automation",
+   "title": "Assessment",
+   "path": "corpus/real/offerings/housecall-pro/back-office-automation.md",
+   "scales": [
+    "S0",
+    "S",
+    "M",
+    "L"
+   ],
+   "tokens": 1356,
+   "sourceUrls": [
+    "https://www.housecallpro.com/features/sales-proposal-tool/",
+    "https://www.housecallpro.com/pricing/",
+    "https://www.housecallpro.com/resources/february-2026-product-updates/",
+    "https://www.housecallpro.com/resources/may-2026-product-updates/",
+    "https://www.prnewswire.com/news-releases/housecall-pro-brings-ai-powered-voice-activated-invoicing-to-the-trades-302557027.html",
+    "https://www.prnewswire.com/news-releases/housecall-pro-unveils-major-ai-powered-updates-for-fall-2025-302594189.html"
+   ],
+   "synthetic": false,
+   "abstract": "Housecall Pro has more AI back-office surface than a prior read suggested, but it is still assistive rather than autonomous: AI-powered voice-to-invoice lets a technician dictate…"
+  },
+  {
+   "id": "offerings__housecall-pro__customer-contact-agent",
+   "title": "Assessment",
+   "path": "corpus/real/offerings/housecall-pro/customer-contact-agent.md",
+   "scales": [
+    "S0",
+    "S",
+    "M",
+    "L"
+   ],
+   "tokens": 809,
+   "sourceUrls": [
+    "https://help.housecallpro.com/en/articles/9311875-ai-team-overview",
+    "https://www.housecallpro.com/features/ai-team/csr-ai/",
+    "https://www.prnewswire.com/news-releases/housecall-pro-unveils-major-ai-powered-updates-for-fall-2025-302594189.html"
+   ],
+   "synthetic": false,
+   "abstract": "CSR AI is a GA, autonomous AI receptionist that answers inbound calls AND chats 24/7 and books jobs directly onto the calendar using the business's real services, hours and availa…"
+  },
+  {
+   "id": "offerings__housecall-pro__dispatch-scheduling",
+   "title": "Assessment",
+   "path": "corpus/real/offerings/housecall-pro/dispatch-scheduling.md",
+   "scales": [
+    "S0",
+    "S",
+    "M",
+    "L"
+   ],
+   "tokens": 1305,
+   "sourceUrls": [
+    "https://beelineroutes.com/hcp",
+    "https://www.globenewswire.com/news-release/2026/05/27/3302009/0/en/Housecall-Pro-Unveils-Platform-Redesign-at-Built-to-Last-Spring-Summit-2026.html",
+    "https://www.housecallpro.com/features/dispatching-software/",
+    "https://www.housecallpro.com/resources/may-2026-product-updates/"
+   ],
+   "synthetic": false,
+   "abstract": "Housecall Pro still has NO native AI/ML dispatch: technician assignment and job sequencing remain manual (drag-and-drop, map view, live GPS, drive-time estimates), with no ML-driv…"
+  },
+  {
+   "id": "offerings__housecall-pro__in-product-copilot",
+   "title": "Assessment",
+   "path": "corpus/real/offerings/housecall-pro/in-product-copilot.md",
+   "scales": [
+    "S0",
+    "S",
+    "M",
+    "L"
+   ],
+   "tokens": 1336,
+   "sourceUrls": [
+    "https://help.housecallpro.com/en/articles/9311875-ai-team-overview",
+    "https://www.housecallpro.com/features/ai-team/",
+    "https://www.housecallpro.com/features/ai-team/analyst-ai-and-coach-ai/",
+    "https://www.prnewswire.com/news-releases/housecall-pro-unveils-major-ai-powered-updates-for-fall-2025-302594189.html"
+   ],
+   "synthetic": false,
+   "abstract": "Housecall Pro ships two free, default-on conversational copilots that satisfy the \"query data + coaching\" definition: Analyst AI answers plain-English questions about business dat…"
+  },
+  {
+   "id": "offerings__housecall-pro__marketing-content",
+   "title": "Assessment",
+   "path": "corpus/real/offerings/housecall-pro/marketing-content.md",
+   "scales": [
+    "S0",
+    "S",
+    "M",
+    "L"
+   ],
+   "tokens": 772,
+   "sourceUrls": [
+    "https://help.housecallpro.com/en/articles/10630035-marketing-ai-overview",
+    "https://www.housecallpro.com/features/ai-team/",
+    "https://www.prnewswire.com/news-releases/housecall-pro-unveils-major-ai-powered-updates-for-fall-2025-302594189.html"
+   ],
+   "synthetic": false,
+   "abstract": "Marketing AI is a free, default-on generative copilot that drafts marketing emails, SMS, campaign copy, and professional service descriptions from a short prompt via the 'Write it…"
+  },
+  {
+   "id": "offerings__housecall-pro__reputation-reviews",
+   "title": "Assessment",
+   "path": "corpus/real/offerings/housecall-pro/reputation-reviews.md",
+   "scales": [
+    "S0",
+    "S",
+    "M",
+    "L"
+   ],
+   "tokens": 781,
+   "sourceUrls": [
+    "https://help.housecallpro.com/en/articles/10630035-marketing-ai-overview",
+    "https://help.housecallpro.com/en/articles/9311875-ai-team-overview",
+    "https://www.housecallpro.com/features/review-management-software/"
+   ],
+   "synthetic": false,
+   "abstract": "Housecall Pro automates review solicitation and provides a unified Google/Facebook monitoring dashboard, and — confirmed — its Marketing AI 'Write it for Me' can AI-DRAFT response…"
+  },
+  {
+   "id": "offerings__jobber__agentic-workflow",
+   "title": "Assessment",
+   "path": "corpus/real/offerings/jobber/agentic-workflow.md",
+   "scales": [
+    "S0",
+    "S",
+    "M",
+    "L"
+   ],
+   "tokens": 699,
+   "sourceUrls": [
+    "https://help.getjobber.com/hc/en-us/articles/24244124296471-Automations",
+    "https://www.getjobber.com/features/ai/",
+    "https://www.getjobber.com/features/automate-repetitive-tasks/"
+   ],
+   "synthetic": false,
+   "abstract": "Jobber Automations runs trigger-based rules (quote/invoice follow-ups, auto-archive, high-value-job alerts) and Jobber AI both suggests automations to enable based on learned busi…"
+  },
+  {
+   "id": "offerings__jobber__back-office-automation",
+   "title": "Assessment",
+   "path": "corpus/real/offerings/jobber/back-office-automation.md",
+   "scales": [
+    "S0",
+    "S",
+    "M",
+    "L"
+   ],
+   "tokens": 819,
+   "sourceUrls": [
+    "https://help.getjobber.com/hc/en-us/articles/24244124296471-Automations",
+    "https://productupdates.getjobber.com/111090-quote-faster-and-win-more-work-with-new-automations",
+    "https://www.getjobber.com/features/ai/"
+   ],
+   "synthetic": false,
+   "abstract": "Jobber AI genuinely constructs quotes — 'Draft for me' generates a quote (including suggested line items) in seconds from the request details, your saved templates, and your past…"
+  },
+  {
+   "id": "offerings__jobber__customer-contact-agent",
+   "title": "Assessment",
+   "path": "corpus/real/offerings/jobber/customer-contact-agent.md",
+   "scales": [
+    "S0",
+    "S",
+    "M",
+    "L"
+   ],
+   "tokens": 1258,
+   "sourceUrls": [
+    "https://help.getjobber.com/hc/en-us/articles/25315900454423-Jobber-AI-Voice-and-Chat-Beta",
+    "https://help.getjobber.com/hc/en-us/articles/25315927533847-Receptionist-powered-by-Jobber-AI",
+    "https://www.getjobber.com/features/ai-receptionist/",
+    "https://www.getjobber.com/features/ai/",
+    "https://www.getjobber.com/pricing/",
+    "https://www.prnewswire.com/news-releases/jobber-launches-ai-powered-receptionist-to-answer-calls-and-texts-for-busy-home-service-businesses-302531125.html"
+   ],
+   "synthetic": false,
+   "abstract": "Jobber's strongest AI area: a real AI voice/text receptionist (Receptionist, powered by Jobber AI) that answers calls AND texts 24/7, qualifies and captures leads, books visits in…"
+  },
+  {
+   "id": "offerings__jobber__dispatch-scheduling",
+   "title": "Assessment",
+   "path": "corpus/real/offerings/jobber/dispatch-scheduling.md",
+   "scales": [
+    "S0",
+    "S",
+    "M",
+    "L"
+   ],
+   "tokens": 709,
+   "sourceUrls": [
+    "https://fieldcamp.ai/reviews/jobber/",
+    "https://help.getjobber.com/hc/en-us/articles/34303089729559-Route-Optimization-New-Schedule",
+    "https://www.getjobber.com/academy/what-is-route-optimization/"
+   ],
+   "synthetic": false,
+   "abstract": "Jobber offers heuristic route optimization that sequences a day's jobs to minimize drive time (factoring time of day, typical traffic, road closures, and team GPS locations), but…"
+  },
+  {
+   "id": "offerings__jobber__in-product-copilot",
+   "title": "Assessment",
+   "path": "corpus/real/offerings/jobber/in-product-copilot.md",
+   "scales": [
+    "S0",
+    "S",
+    "M",
+    "L"
+   ],
+   "tokens": 911,
+   "sourceUrls": [
+    "https://help.getjobber.com/hc/en-us/articles/25315900454423-Jobber-AI-Voice-and-Chat-Beta",
+    "https://www.getjobber.com/features/ai/",
+    "https://www.prnewswire.com/news-releases/jobber-launches-copilot-the-first-of-several-ai-powered-products-aimed-at-making-home-service-business-ownership-simpler-than-ever-before-302264047.html"
+   ],
+   "synthetic": false,
+   "abstract": "Jobber offers an in-app conversational assistant (Jobber Copilot, surfaced as 'Jobber AI Voice and Chat') that acts as a business coach, data analyst, marketing specialist and Job…"
+  },
+  {
+   "id": "offerings__jobber__marketing-content",
+   "title": "Assessment",
+   "path": "corpus/real/offerings/jobber/marketing-content.md",
+   "scales": [
+    "S0",
+    "S",
+    "M",
+    "L"
+   ],
+   "tokens": 773,
+   "sourceUrls": [
+    "https://productupdates.getjobber.com/48468-confidently-craft-text-in-your-desired-tone-with-the-ai-powered-rewrite-button",
+    "https://www.getjobber.com/features/ai/",
+    "https://www.getjobber.com/features/marketing-tools/"
+   ],
+   "synthetic": false,
+   "abstract": "Jobber's Marketing Suite uses the customer's account data to generate a customized marketing plan and to draft emails, social posts, and review requests, plus AI-drafted email cam…"
+  },
+  {
+   "id": "offerings__jobber__reputation-reviews",
+   "title": "Assessment",
+   "path": "corpus/real/offerings/jobber/reputation-reviews.md",
+   "scales": [
+    "S0",
+    "S",
+    "M",
+    "L"
+   ],
+   "tokens": 601,
+   "sourceUrls": [
+    "https://www.getjobber.com/features/marketing-tools/",
+    "https://www.getjobber.com/features/marketing-tools/reviews/"
+   ],
+   "synthetic": false,
+   "abstract": "Jobber covers the full review loop: automated review requests after a completed job or paid invoice, AI-generated suggested replies to reviews (editable before posting), and a rev…"
+  },
+  {
+   "id": "offerings__servicetitan__agentic-workflow",
+   "title": "Assessment",
+   "path": "corpus/real/offerings/servicetitan/agentic-workflow.md",
+   "scales": [
+    "S0",
+    "S",
+    "M",
+    "L"
+   ],
+   "tokens": 1487,
+   "sourceUrls": [
+    "https://help.servicetitan.com/residential-s-r/docs/atlas-home",
+    "https://www.servicetitan.com/blog/success-story-quality-service-atlas-adaptive-capacity",
+    "https://www.servicetitan.com/blog/webinar-recap-atlas-your-ai-sidekick",
+    "https://www.servicetitan.com/features/atlas",
+    "https://www.servicetitan.com/press/servicetitan-introducing-the-next-evolution-of-ai-at-pantheon-2025-keynote"
+   ],
+   "synthetic": false,
+   "abstract": "ServiceTitan's agentic-office capability is now real and in-market as a private preview, not just a keynote roadmap. Four Atlas office modules (Marketing Pro, Contact Center Pro,…"
+  },
+  {
+   "id": "offerings__servicetitan__back-office-automation",
+   "title": "Assessment",
+   "path": "corpus/real/offerings/servicetitan/back-office-automation.md",
+   "scales": [
+    "S0",
+    "S",
+    "M",
+    "L"
+   ],
+   "tokens": 1711,
+   "sourceUrls": [
+    "https://help.servicetitan.com/commercial/docs/use-accounts-payable-inbox",
+    "https://www.globenewswire.com/news-release/2026/01/08/3215159/0/en/ServiceTitan-Introduces-AP-Automation-and-Expands-Fintech-Suite-to-Modernize-Contractor-Financial-Workflows.html",
+    "https://www.servicetitan.com/features/accounts-payable",
+    "https://www.servicetitan.com/features/pro/pricebook",
+    "https://www.servicetitan.com/features/titan-intelligence",
+    "https://www.servicetitan.com/press/servicetitan-introduces-ap-automation-and-expands-fintech-suite",
+    "https://www.servicetitan.com/press/servicetitan-introducing-the-next-evolution-of-ai-at-pantheon-2025-keynote"
+   ],
+   "synthetic": false,
+   "abstract": "ServiceTitan now ships genuine document/data automation in the back office, not just assistive helpers. Its AP Automation (GA since Jan 8 2026) captures vendor bills via an OCR-sc…"
+  },
+  {
+   "id": "offerings__servicetitan__customer-contact-agent",
+   "title": "Assessment",
+   "path": "corpus/real/offerings/servicetitan/customer-contact-agent.md",
+   "scales": [
+    "S0",
+    "S",
+    "M",
+    "L"
+   ],
+   "tokens": 816,
+   "sourceUrls": [
+    "https://help.servicetitan.com/docs/ai-voice-agent-for-basic-phones-and-phones-pro-faq",
+    "https://www.servicetitan.com/features/pro/contact-center",
+    "https://www.servicetitan.com/features/pro/voice-agent"
+   ],
+   "synthetic": false,
+   "abstract": "ServiceTitan ships a GA AI Voice Agent that answers inbound calls 24/7, identifies customers, infers job types, and books straight to the dispatch board using real-time technician…"
+  },
+  {
+   "id": "offerings__servicetitan__dispatch-scheduling",
+   "title": "Assessment",
+   "path": "corpus/real/offerings/servicetitan/dispatch-scheduling.md",
+   "scales": [
+    "S0",
+    "S",
+    "M",
+    "L"
+   ],
+   "tokens": 593,
+   "sourceUrls": [
+    "https://www.servicetitan.com/features/pro/dispatch",
+    "https://www.servicetitan.com/features/titan-intelligence"
+   ],
+   "synthetic": false,
+   "abstract": "Dispatch Pro is the category's only true ML-driven dispatch engine — it predicts job value and technician performance, then recommends/assigns technicians to maximize revenue. Thi…"
+  },
+  {
+   "id": "offerings__servicetitan__in-product-copilot",
+   "title": "Assessment",
+   "path": "corpus/real/offerings/servicetitan/in-product-copilot.md",
+   "scales": [
+    "S0",
+    "S",
+    "M",
+    "L"
+   ],
+   "tokens": 1536,
+   "sourceUrls": [
+    "https://help.servicetitan.com/docs/use-atlas-in-mobile",
+    "https://help.servicetitan.com/residential-s-r/docs/atlas-home",
+    "https://www.servicetitan.com/blog/fall-2025-release-guide",
+    "https://www.servicetitan.com/features/atlas",
+    "https://www.servicetitan.com/features/pro/field",
+    "https://www.servicetitan.com/press/servicetitan-introducing-the-next-evolution-of-ai-at-pantheon-2025-keynote"
+   ],
+   "synthetic": false,
+   "abstract": "Atlas is a GA conversational AI assistant that ServiceTitan's help center describes as a Core product available to all ServiceTitan customers, surfaced today in the mobile app for…"
+  },
+  {
+   "id": "offerings__servicetitan__marketing-content",
+   "title": "Assessment",
+   "path": "corpus/real/offerings/servicetitan/marketing-content.md",
+   "scales": [
+    "S0",
+    "S",
+    "M",
+    "L"
+   ],
+   "tokens": 785,
+   "sourceUrls": [
+    "https://www.servicetitan.com/features/pro/marketing",
+    "https://www.servicetitan.com/features/pro/marketing/ads",
+    "https://www.servicetitan.com/features/titan-intelligence"
+   ],
+   "synthetic": false,
+   "abstract": "Marketing Pro ships AI/data-driven campaign automation and Ads Optimizer (feeds ServiceTitan revenue/audience data into Google Ads to optimize for sales, not just clicks), but tru…"
+  },
+  {
+   "id": "offerings__servicetitan__reputation-reviews",
+   "title": "Assessment",
+   "path": "corpus/real/offerings/servicetitan/reputation-reviews.md",
+   "scales": [
+    "S0",
+    "S",
+    "M",
+    "L"
+   ],
+   "tokens": 763,
+   "sourceUrls": [
+    "https://help.servicetitan.com/v1/docs/manage-review-responses",
+    "https://www.servicetitan.com/features/pro/marketing/reputation",
+    "https://www.servicetitan.com/features/titan-intelligence"
+   ],
+   "synthetic": false,
+   "abstract": "ServiceTitan ships the rarer capability of AI-DRAFTED review responses, not just solicitation: the Titan Intelligence Review Response Generator (click 'Generate Reply') creates pe…"
+  },
+  {
+   "id": "research__pricing__housecall-pro",
+   "title": "Housecall Pro — Pricing & Packaging Profile",
+   "path": "corpus/real/research/pricing/housecall-pro.md",
+   "scales": [
+    "S",
+    "M",
+    "L"
+   ],
+   "tokens": 5664,
+   "sourceUrls": [
+    "https://costbench.com/software/field-service-management/housecall-pro/",
+    "https://projul.com/blog/housecall-pro-pricing-analysis-2026/",
+    "https://serviceagent.ai/blogs/housecall-pro-pricing/",
+    "https://tooleduppro.com/guides/housecall-pro-pricing/",
+    "https://www.g2.com/products/housecall-pro/pricing",
+    "https://www.housecallpro.com/features/ai-team/",
+    "https://www.housecallpro.com/features/ai-team/csr-ai/",
+    "https://www.housecallpro.com/features/instapay/",
+    "https://www.housecallpro.com/features/payment/",
+    "https://www.housecallpro.com/pricing/",
+    "https://www.housecallpro.com/resources/february-2026-product-updates/",
+    "https://www.housecallpro.com/resources/how-much-does-an-answering-service-cost/",
+    "https://www.moj.io/news/force-by-mojio-teams-up-with-housecall-pro-to-launch-vehicle-gps-tracking/",
+    "https://www.phcppros.com/articles/15247-housecall-pro-teams-up-with-force-by-mojio-to-launch-vehicle-gps-tracking-service-for-home-service-pros",
+    "https://www.prnewswire.com/news-releases/housecall-pro-unveils-major-ai-powered-updates-for-fall-2025-302594189.html",
+    "https://www.prnewswire.com/news-releases/housecall-pro-unveils-most-requested-platform-upgrades-turning-feedback-into-action-302694761.html",
+    "https://www.rivetops.io/housecall-pro-pricing"
+   ],
+   "synthetic": false,
+   "abstract": "Housecall Pro positions itself as an all-in-one field service management platform for home service businesses — plumbing, HVAC, electrical, cleaning, and similar trades — spanning…"
+  },
+  {
+   "id": "research__pricing__jobber",
+   "title": "Jobber — Pricing & Packaging Profile",
+   "path": "corpus/real/research/pricing/jobber.md",
+   "scales": [
+    "S",
+    "M",
+    "L"
+   ],
+   "tokens": 4428,
+   "sourceUrls": [
+    "https://buyersprint.com/2026/04/17/jobber-pricing-2026/",
+    "https://fieldcamp.ai/reviews/jobber/",
+    "https://help.getjobber.com/hc/en-us/articles/25315927533847-Receptionist-powered-by-Jobber-AI",
+    "https://myquoteiq.com/jobber-pricing-breakdown-2026/",
+    "https://www.getjobber.com/features/ai-receptionist/",
+    "https://www.getjobber.com/pricing/",
+    "https://www.getonecrew.com/post/jobber-prices",
+    "https://www.prnewswire.com/news-releases/industry-leader-jobber-unveils-exciting-new-ai-offerings-for-home-service-businesses-302567290.html",
+    "https://www.prnewswire.com/news-releases/jobber-launches-ai-powered-receptionist-to-answer-calls-and-texts-for-busy-home-service-businesses-302531125.html"
+   ],
+   "synthetic": false,
+   "abstract": "Jobber positions itself as an all-in-one operations platform for home and commercial service businesses — from solo contractors up through 15+ person teams and multi-location oper…"
+  },
+  {
+   "id": "research__pricing__servicetitan",
+   "title": "ServiceTitan — Pricing & Packaging Profile",
+   "path": "corpus/real/research/pricing/servicetitan.md",
+   "scales": [
+    "S",
+    "M",
+    "L"
+   ],
+   "tokens": 6702,
+   "sourceUrls": [
+    "https://fieldcamp.ai/reviews/servicetitan/",
+    "https://finance.yahoo.com/news/servicetitan-inc-ttan-q3-2026-050057781.html",
+    "https://help.servicetitan.com/docs/payments-faq",
+    "https://help.servicetitan.com/docs/titan-intelligence-overview",
+    "https://merchantcostconsulting.com/lower-credit-card-processing-fees/servicetitan-review/",
+    "https://myquoteiq.com/servicetitan-pricing-per-month/",
+    "https://myquoteiq.com/servicetitan-pricing/",
+    "https://procured.us/articles/servicetitan-pricing",
+    "https://projul.com/blog/servicetitan-pricing-analysis-2026/",
+    "https://seekingalpha.com/news/4564113-servicetitan-outlines-1_11b-1_12b-fy-2027-revenue-target-as-max-ai-platform-ramps",
+    "https://siliconangle.com/2025/09/18/servicetitan-launches-atlas-ai-sidekick-automate-contractor-operations/",
+    "https://vertexhub.app/blog/servicetitan-pricing-2026.html",
+    "https://www.capterra.com/p/150053/ServiceTitan/pricing/",
+    "https://www.fieldproxy.ai/blog/servicetitan-pricing-vs-competitor-pricing",
+    "https://www.fool.com/earnings/call-transcripts/2026/03/12/servicetitan-ttan-q4-2026-earnings-transcript/",
+    "https://www.g2.com/products/servicetitan/pricing",
+    "https://www.g2.com/products/servicetitan/reviews",
+    "https://www.gurufocus.com/stock/TTAN/transcripts/3235214",
+    "https://www.itqlick.com/servicetitan/pricing",
+    "https://www.repair-crm.com/2026/03/04/servicetitan-pricing-in-2026-an-honest-look-at-the-real-cost/amp/",
+    "https://www.rivetops.io/servicetitan-pricing",
+    "https://www.servicetitan.com/features/atlas",
+    "https://www.servicetitan.com/features/customer-financing",
+    "https://www.servicetitan.com/features/payments",
+    "https://www.servicetitan.com/features/pro",
+    "https://www.servicetitan.com/features/pro/contact-center",
+    "https://www.servicetitan.com/features/pro/contact-center/voice-agents",
+    "https://www.servicetitan.com/features/pro/fleet",
+    "https://www.servicetitan.com/features/pro/pricebook",
+    "https://www.servicetitan.com/features/pro/scheduling",
+    "https://www.servicetitan.com/features/titan-intelligence",
+    "https://www.servicetitan.com/press/introducing-titan-intelligence",
+    "https://www.servicetitan.com/pricing",
+    "https://www.servicetitanpricing.com/",
+    "https://www.stocktitan.net/news/TTAN/service-titan-introducing-the-next-evolution-of-ai-at-pantheon-2025-8vb7yjz6229u.html",
+    "https://www.stocktitan.net/news/TTAN/service-titan-s-max-drives-ai-powered-growth-for-kppl221br6g7.html",
+    "https://www.trustradius.com/products/servicetitan/pricing",
+    "https://www.wisetack.com/"
+   ],
+   "synthetic": false,
+   "abstract": "ServiceTitan is the enterprise/premium anchor of the field service management category — publicly traded (NASDAQ: TTAN), sales-led, and explicitly optimized for larger trades busi…"
+  },
+  {
+   "id": "research__teardowns__crm-communications",
+   "title": "Competitor Teardown — CRM & Customer Communications",
+   "path": "corpus/real/research/teardowns/crm-communications.md",
+   "scales": [
+    "S",
+    "M",
+    "L"
+   ],
+   "tokens": 17265,
+   "sourceUrls": [
+    "https://[host",
+    "https://fieldcamp.ai/reviews/jobber/",
+    "https://help.getjobber.com/hc/en-us/articles/115009450867-Client-Basics",
+    "https://help.getjobber.com/hc/en-us/articles/115009557647-Tags",
+    "https://help.getjobber.com/hc/en-us/articles/115009571307-Client-Hub-Settings",
+    "https://help.getjobber.com/hc/en-us/articles/115009735928-Custom-Fields",
+    "https://help.getjobber.com/hc/en-us/articles/115010161128-Properties",
+    "https://help.getjobber.com/hc/en-us/articles/115016068927-Client-Communications-Report",
+    "https://help.getjobber.com/hc/en-us/articles/13808363916951-Online-Booking",
+    "https://help.getjobber.com/hc/en-us/articles/1500010708402-Two-Way-Text-Messaging-in-the-Jobber-App",
+    "https://help.getjobber.com/hc/en-us/articles/1500011237822-What-Do-Your-Clients-See-in-Client-Hub",
+    "https://help.getjobber.com/hc/en-us/articles/19885016029207-Campaigns-Marketing-Tools",
+    "https://help.getjobber.com/hc/en-us/articles/20621046897559-Reviews-Marketing-Tools",
+    "https://help.getjobber.com/hc/en-us/articles/24244124296471-Automations",
+    "https://help.getjobber.com/hc/en-us/articles/25315900454423-Jobber-AI-Voice-and-Chat-Beta",
+    "https://help.getjobber.com/hc/en-us/articles/25315927533847-Receptionist-powered-by-Jobber-AI",
+    "https://help.getjobber.com/hc/en-us/articles/360000110368-Notes-and-Attachments",
+    "https://help.getjobber.com/hc/en-us/articles/360033608974-Assessment-and-Visit-Reminders",
+    "https://help.getjobber.com/hc/en-us/articles/360037055533-Activity-Feed",
+    "https://help.getjobber.com/hc/en-us/articles/360051087154-Two-Way-Text-Messaging",
+    "https://help.getjobber.com/hc/en-us/articles/38642097101591-Receptionist-in-the-Jobber-App",
+    "https://help.getjobber.com/hc/en-us/articles/39026037947543-Requests-and-Bookings-Settings",
+    "https://help.getjobber.com/hc/en-us/articles/39800675084439-Files-and-Media-Library",
+    "https://help.getjobber.com/hc/en-us/articles/7448087796631-On-My-Way-Text-Messages-in-the-Jobber-App",
+    "https://help.getjobber.com/hc/en-us/articles/9335574672151-Emails-and-Text-Messages-Settings",
+    "https://help.housecallpro.com/en/articles/10028154-lead-form",
+    "https://help.housecallpro.com/en/articles/10630035-marketing-ai-overview",
+    "https://help.housecallpro.com/en/articles/12001958-csr-ai-best-practices-and-faqs",
+    "https://help.housecallpro.com/en/articles/12417565-customize-sms-notifications",
+    "https://help.housecallpro.com/en/articles/2637765-reviews-app",
+    "https://help.housecallpro.com/en/articles/2813289-adding-new-customers",
+    "https://help.housecallpro.com/en/articles/357613-customer-notifications-overview",
+    "https://help.housecallpro.com/en/articles/361372-custom-fields",
+    "https://help.housecallpro.com/en/articles/3703307-property-profile",
+    "https://help.housecallpro.com/en/articles/4793277-what-are-my-options-for-communicating-with-my-customers-from-the-mobile-app",
+    "https://help.housecallpro.com/en/articles/5981299-messaging-within-your-housecall-pro-inbox",
+    "https://help.housecallpro.com/en/articles/6060351-vehicle-gps-tracking-overview",
+    "https://help.housecallpro.com/en/articles/6750234-voice-settings-overview",
+    "https://help.housecallpro.com/en/articles/6750286-set-up-call-tracking-for-the-first-time",
+    "https://help.housecallpro.com/en/articles/8448657-using-the-customer-portal",
+    "https://help.housecallpro.com/en/articles/8490475-tags-overview",
+    "https://help.housecallpro.com/en/articles/8688152-setting-up-sms-job-reminders",
+    "https://help.housecallpro.com/en/articles/887351-texting-number",
+    "https://help.housecallpro.com/en/articles/9311875-ai-team-overview",
+    "https://help.housecallpro.com/en/articles/9740104-csr-ai-overview",
+    "https://help.housecallpro.com/en/articles/9764383-customer-profile-overview",
+    "https://help.servicetitan.com/docs/adaptive-capacity-overview-learn-how-it-works",
+    "https://help.servicetitan.com/docs/add-notes-media-and-file-attachments-in-servicetitan",
+    "https://help.servicetitan.com/docs/add-or-edit-tracking-numbers",
+    "https://help.servicetitan.com/docs/call-booking",
+    "https://help.servicetitan.com/docs/customer-and-location-records-overview",
+    "https://help.servicetitan.com/docs/customer-notifications",
+    "https://help.servicetitan.com/docs/how-to-send-and-receive-text-messages-in-servicetitan",
+    "https://help.servicetitan.com/docs/manage-review-requests",
+    "https://help.servicetitan.com/docs/manage-technician-two-way-chat-in-servicetitan-and-servicetitan-mobile",
+    "https://help.servicetitan.com/docs/set-up-and-customize-the-new-customer-portal",
+    "https://help.servicetitan.com/docs/titan-intelligence-overview",
+    "https://help.servicetitan.com/docs/use-custom-fields",
+    "https://help.servicetitan.com/how-to/call-tracking-and-recording-overview-in-contact-center-pro-and-servicetitan",
+    "https://help.servicetitan.com/how-to/enable-dispatch-notifications",
+    "https://help.servicetitan.com/release-hub/docs/convert-new-leads-into-booked-jobs-faster-with-speed-to-lead",
+    "https://help.servicetitan.com/v1/docs/contact-center-pro",
+    "https://help.servicetitan.com/v1/docs/evaluate-employees-using-the-voice-intelligence-call-summary",
+    "https://myquoteiq.com/jobber-pricing-breakdown-2026/",
+    "https://productupdates.getjobber.com/45324-track-inbound-phone-calls-and-lead-sources-with-callrail",
+    "https://productupdates.getjobber.com/91774-add-multiple-client-contacts-and-send-the-right-info-to-the-right-people",
+    "https://www.callrail.com/integrations/jobber",
+    "https://www.getjobber.com/features/ai-receptionist/",
+    "https://www.getjobber.com/features/ai/",
+    "https://www.getjobber.com/features/client-hub/",
+    "https://www.getjobber.com/features/collect-requests-and-bookings/",
+    "https://www.getjobber.com/features/field-service-crm/",
+    "https://www.getjobber.com/pricing/",
+    "https://www.housecallpro.com/features/ai-team/csr-ai/",
+    "https://www.housecallpro.com/features/online-booking/",
+    "https://www.housecallpro.com/features/voice-solutions/",
+    "https://www.housecallpro.com/pricing/",
+    "https://www.prnewswire.com/news-releases/jobber-launches-ai-powered-receptionist-to-answer-calls-and-texts-for-busy-home-service-businesses-302531125.html",
+    "https://www.servicetitan.com/blog/product-updates-may-2026",
+    "https://www.servicetitan.com/features/call-booking-software",
+    "https://www.servicetitan.com/features/customer-portal-software",
+    "https://www.servicetitan.com/features/pro/contact-center",
+    "https://www.servicetitan.com/features/pro/contact-center/manager-assist",
+    "https://www.servicetitan.com/features/pro/contact-center/voice-agents",
+    "https://www.servicetitan.com/features/pro/marketing/ai-powered-agents",
+    "https://www.servicetitan.com/features/pro/scheduling"
+   ],
+   "synthetic": false,
+   "abstract": "This teardown examines how our three primary FSM competitors manage customers and customer communication at the UI/workflow level: what a customer record actually holds, how two-w…"
+  },
+  {
+   "id": "research__teardowns__estimates-invoices",
+   "title": "Competitor Teardown — Estimate & Invoice Generation",
+   "path": "corpus/real/research/teardowns/estimates-invoices.md",
+   "scales": [
+    "S",
+    "M",
+    "L"
+   ],
+   "tokens": 4541,
+   "sourceUrls": [
+    "https://help.getjobber.com/hc/en-us/articles/115009378727-Quote-Basics",
+    "https://help.getjobber.com/hc/en-us/articles/115009685047-Invoice-Basics",
+    "https://help.getjobber.com/hc/en-us/articles/28400864393495-Advanced-Quote-Customization",
+    "https://help.getjobber.com/hc/en-us/articles/29292809768983-Quote-Templates",
+    "https://help.housecallpro.com/en/articles/1185469-how-to-create-an-estimate",
+    "https://help.housecallpro.com/en/articles/1185469-how-to-create-an-estimate#h_d9958aafd2",
+    "https://help.housecallpro.com/en/articles/2876243-how-to-send-an-invoice",
+    "https://help.servicetitan.com/docs/add-and-edit-estimates-in-servicetitan",
+    "https://help.servicetitan.com/docs/invoice-walkthrough",
+    "https://help.servicetitan.com/how-to/building-and-selling-estimates"
+   ],
+   "synthetic": false,
+   "abstract": "How each competitor handles the quote/estimate builder, invoice generation, and template/customization tooling — captured from their public help centers. Jobber's help images load…"
+  },
+  {
+   "id": "research__teardowns__payments-financing",
+   "title": "Competitor Teardown — Payments, Financing & Checkout",
+   "path": "corpus/real/research/teardowns/payments-financing.md",
+   "scales": [
+    "S",
+    "M",
+    "L"
+   ],
+   "tokens": 4925,
+   "sourceUrls": [
+    "https://help.getjobber.com/hc/en-us/articles/115009571387-Jobber-Payments-Basics",
+    "https://help.getjobber.com/hc/en-us/articles/115009590727-Manage-your-Jobber-Payments-Settings",
+    "https://help.getjobber.com/hc/en-us/articles/360046796833-Instant-Payouts",
+    "https://help.getjobber.com/hc/en-us/articles/360056100954-Jobber-and-Wisetack-Consumer-Financing-Integration",
+    "https://help.housecallpro.com/en/articles/2046930-housecall-pro-payment-processing-options",
+    "https://help.housecallpro.com/en/articles/2790259-my-money-overview",
+    "https://help.housecallpro.com/en/articles/3538947-wisetack-consumer-financing-invoices-estimates",
+    "https://help.housecallpro.com/en/articles/7263467-hcp-money-how-to-sign-up-faqs",
+    "https://help.housecallpro.com/en/collections/74819-hcp-payments",
+    "https://help.servicetitan.com/docs/payment-settings-and-general-workflows",
+    "https://help.servicetitan.com/docs/payments-overview",
+    "https://help.servicetitan.com/faq/payments-faq",
+    "https://help.servicetitan.com/how-to/payment-collect",
+    "https://merchantcostconsulting.com/lower-credit-card-processing-fees/servicetitan-review/",
+    "https://myquoteiq.com/jobber-pricing-breakdown-2026/",
+    "https://wisetackapp.com/wisetack-finance.html",
+    "https://www.getjobber.com/features/field-service-credit-card-processing/",
+    "https://www.housecallpro.com/features/consumer-financing/",
+    "https://www.housecallpro.com/features/instapay/",
+    "https://www.housecallpro.com/features/payment/",
+    "https://www.servicetitan.com/features/customer-financing",
+    "https://www.servicetitan.com/features/payments"
+   ],
+   "synthetic": false,
+   "abstract": "How each competitor moves money: native card/ACH processing, in-field collection, consumer financing, deposits and stored cards, and instant payouts. Captured from public help cen…"
+  },
+  {
+   "id": "research__teardowns__price-book-catalog",
+   "title": "Competitor Teardown — Price Book & Catalog Management",
+   "path": "corpus/real/research/teardowns/price-book-catalog.md",
+   "scales": [
+    "S",
+    "M",
+    "L"
+   ],
+   "tokens": 13788,
+   "sourceUrls": [
+    "https://help.getjobber.com/hc/en-us/articles/115009735848-Products-Services-List",
+    "https://help.getjobber.com/hc/en-us/articles/1500012369781-Markups-on-Quotes",
+    "https://help.getjobber.com/hc/en-us/articles/34516153918103-Jobber-and-The-Home-Depot-Integration",
+    "https://help.getjobber.com/hc/en-us/articles/360049503713-Line-Item-Images-on-Quotes",
+    "https://help.getjobber.com/hc/en-us/articles/360050124513-The-Grow-Plan",
+    "https://help.housecallpro.com/en/articles/10844040-how-to-use-the-reece-integration-by-housecall-pro",
+    "https://help.housecallpro.com/en/articles/13744992-how-to-use-the-sherwin-williams-catalog-integration-by-housecall-pro",
+    "https://help.housecallpro.com/en/articles/14058981-measurement-based-pricing",
+    "https://help.housecallpro.com/en/articles/5090568-price-book-services-guide",
+    "https://help.housecallpro.com/en/articles/5456326-price-book-materials-guide",
+    "https://help.housecallpro.com/en/articles/5461788-flat-rate-pricing-overview",
+    "https://help.housecallpro.com/en/articles/6467989-price-book-mobile-key-features",
+    "https://help.housecallpro.com/en/articles/6973952-job-inputs-and-flat-rate-services",
+    "https://help.housecallpro.com/en/articles/8754493-profit-rhino-with-housecall-pro-a-complete-guide",
+    "https://help.housecallpro.com/en/collections/2795406-price-book",
+    "https://help.servicetitan.com/docs/add-provider-catalog-items-with-pricebook-connect",
+    "https://help.servicetitan.com/docs/bulk-edit-pricebook-items",
+    "https://help.servicetitan.com/docs/client-specific-pricing-overview",
+    "https://help.servicetitan.com/docs/import-and-export-your-pricebook",
+    "https://help.servicetitan.com/docs/p2p-home",
+    "https://help.servicetitan.com/docs/pricebook",
+    "https://help.servicetitan.com/docs/pricebook-pro-overview",
+    "https://help.servicetitan.com/how-to/pricebook-category-setup",
+    "https://help.servicetitan.com/how-to/pricebook-excel-template",
+    "https://help.servicetitan.com/how-to/pricebook-pro-and-pricebook-connect-key-differences",
+    "https://help.servicetitan.com/shared/8694a7e5-b884-4275-ae80-89029922accf",
+    "https://help.servicetitan.com/v1/docs/configurable-services-with-pricebook-pro",
+    "https://help.servicetitan.com/v1/docs/dynamic-pricing-overview",
+    "https://profitrhino.com/housecallpro-launches-pricebook-powered-by-profitrhino/",
+    "https://profitrhino.com/profit-rhino-integrations-and-partners/",
+    "https://winktoolbox.com/blog/how-to-set-up-dynamic-pricing-and-automate-your-servicetitan-pricebook",
+    "https://www.getjobber.com/features/ai/",
+    "https://www.housecallpro.com/features/price-book/",
+    "https://www.servicetitan.com/blog/introducing-pricing-builder",
+    "https://www.servicetitan.com/blog/pricebook-connect",
+    "https://www.servicetitan.com/blog/pricebook-with-titan-intelligence",
+    "https://www.servicetitan.com/features/pro/pricebook",
+    "https://www.servicetitan.com/partners/ferguson"
+   ],
+   "synthetic": false,
+   "abstract": "Price book / catalog management is the layer every other workflow sits on top of — quotes, invoices, technician upsells, and job costing all draw from whatever list of products an…"
+  },
+  {
+   "id": "research__teardowns__reporting-analytics",
+   "title": "Competitor Teardown — Reporting & Analytics",
+   "path": "corpus/real/research/teardowns/reporting-analytics.md",
+   "scales": [
+    "S",
+    "M",
+    "L"
+   ],
+   "tokens": 6778,
+   "sourceUrls": [
+    "https://help.housecallpro.com/en/articles/10202074-analyst-ai-overview",
+    "https://help.housecallpro.com/en/articles/11584523-how-to-run-track-and-manage-payroll",
+    "https://help.housecallpro.com/en/articles/12674462-reporting-business-units",
+    "https://help.housecallpro.com/en/articles/15327130-price-book-commissions",
+    "https://help.housecallpro.com/en/articles/4671115-navigating-your-dashboard-reports",
+    "https://help.housecallpro.com/en/articles/6536636-job-costing-complete-set-up-guide",
+    "https://help.housecallpro.com/en/articles/6577580-reporting-dashboard",
+    "https://help.housecallpro.com/en/articles/6596631-job-costing-reports",
+    "https://help.housecallpro.com/en/articles/6596775-commissions-report",
+    "https://help.housecallpro.com/en/articles/6974306-homepage-overview-faq",
+    "https://help.housecallpro.com/en/articles/7336458-managing-reports",
+    "https://help.housecallpro.com/en/articles/8265223-reporting-business-insights",
+    "https://help.housecallpro.com/en/articles/9311875-ai-team-overview",
+    "https://help.servicetitan.com/docs/custom-reports",
+    "https://help.servicetitan.com/docs/measure-performance-and-make-decisions",
+    "https://help.servicetitan.com/docs/reports",
+    "https://help.servicetitan.com/how-to/create-custom-reports",
+    "https://help.servicetitan.com/how-to/job-costing-report",
+    "https://productupdates.getjobber.com/71383-chat-with-jobber-copilot-to-run-your-business-with-confidence",
+    "https://winktoolbox.com/blog/a-deep-dive-into-servicetitan-analytics-features",
+    "https://www.getjobber.com/features/",
+    "https://www.getjobber.com/pricing/",
+    "https://www.housecallpro.com/features/advanced-reporting/",
+    "https://www.housecallpro.com/pricing/",
+    "https://www.housecallpro.com/resources/february-2026-product-updates/",
+    "https://www.prnewswire.com/news-releases/jobber-launches-copilot-the-first-of-several-ai-powered-products-aimed-at-making-home-service-business-ownership-simpler-than-ever-before-302264047.html",
+    "https://www.servicetitan.com/features/pro",
+    "https://www.servicetitan.com/features/titan-intelligence",
+    "https://www.softwareadvice.com/field-service/jobber-profile/"
+   ],
+   "synthetic": false,
+   "abstract": "How each competitor turns operational data into reports, dashboards, and AI-assisted insight. Captured from public help centers and feature pages. Housecall Pro's reporting surfac…"
+  },
+  {
+   "id": "research__teardowns__scheduling-dispatch",
+   "title": "Competitor Teardown — Scheduling & Dispatch",
+   "path": "corpus/real/research/teardowns/scheduling-dispatch.md",
+   "scales": [
+    "S",
+    "M",
+    "L"
+   ],
+   "tokens": 16994,
+   "sourceUrls": [
+    "https://fieldcamp.ai/reviews/jobber/",
+    "https://fieldcamp.ai/reviews/servicetitan/",
+    "https://help.getjobber.com/hc/en-us/articles/115009164267-Month-Week-View-Legacy-Schedule",
+    "https://help.getjobber.com/hc/en-us/articles/115009234307-Map-View-Legacy-Schedule",
+    "https://help.getjobber.com/hc/en-us/articles/115009378707-Assigning-Multiple-Visits-at-Once-to-Users-Legacy-Schedule",
+    "https://help.getjobber.com/hc/en-us/articles/115009542508-Daily-Route-Optimization",
+    "https://help.getjobber.com/hc/en-us/articles/115009542848-Create-a-Recurring-Job",
+    "https://help.getjobber.com/hc/en-us/articles/13808363916951-Online-Booking",
+    "https://help.getjobber.com/hc/en-us/articles/25315927533847-Receptionist-powered-by-Jobber-AI",
+    "https://help.getjobber.com/hc/en-us/articles/29840886387351-New-Schedule",
+    "https://help.getjobber.com/hc/en-us/articles/360033836293-How-to-Route",
+    "https://help.getjobber.com/hc/en-us/articles/360036391693-Business-Hours",
+    "https://help.getjobber.com/hc/en-us/articles/36628696269975-Schedule-Overview-New-Schedule",
+    "https://help.getjobber.com/hc/en-us/articles/6766253760279-Schedule-in-the-Jobber-App",
+    "https://help.getjobber.com/hc/en-us/articles/7448087796631-On-My-Way-Text-Messages-in-the-Jobber-App",
+    "https://help.getjobber.com/hc/en-us/articles/7924045219479-Visits",
+    "https://help.housecallpro.com/en/articles/12892543-appointments-vs-segments-vs-recurring-jobs",
+    "https://help.housecallpro.com/en/articles/2789168-create-a-recurring-job",
+    "https://help.housecallpro.com/en/articles/2845351-manage-recurring-jobs",
+    "https://help.housecallpro.com/en/articles/2865944-manage-team-member-profiles",
+    "https://help.housecallpro.com/en/articles/6060351-vehicle-gps-tracking-overview",
+    "https://help.housecallpro.com/en/articles/6367496-how-to-use-the-schedule-tab-calendar",
+    "https://help.housecallpro.com/en/articles/6758788-scheduling-jobs-and-estimates",
+    "https://help.housecallpro.com/en/articles/7034474-new-online-booking",
+    "https://help.housecallpro.com/en/articles/8124459-service-plan-scheduling-suggestions",
+    "https://help.housecallpro.com/en/articles/9311875-ai-team-overview",
+    "https://help.housecallpro.com/en/articles/9312551-implementing-online-booking",
+    "https://help.housecallpro.com/en/articles/9483598-scheduling-and-calendar-faq",
+    "https://help.housecallpro.com/en/articles/9740104-csr-ai-overview",
+    "https://help.servicetitan.com/docs/best-practices-for-managing-business-units",
+    "https://help.servicetitan.com/docs/dispatch-and-track-your-technicians",
+    "https://help.servicetitan.com/docs/dispatch-board-faq",
+    "https://help.servicetitan.com/docs/dispatch-efficiently-with-map-20",
+    "https://help.servicetitan.com/docs/dispatch-pro-faq",
+    "https://help.servicetitan.com/docs/dispatching",
+    "https://help.servicetitan.com/docs/filter-the-dispatch-board",
+    "https://help.servicetitan.com/docs/manage-recurring-services",
+    "https://help.servicetitan.com/docs/manage-technicians-with-dispatch-pro-auto-mode",
+    "https://help.servicetitan.com/docs/plan-your-team-s-capacity",
+    "https://help.servicetitan.com/docs/scheduling-pro",
+    "https://help.servicetitan.com/docs/use-optimize-technician-route",
+    "https://help.servicetitan.com/docs/use-the-schedule-board",
+    "https://help.servicetitan.com/docs/use-the-weekly-dispatch-board",
+    "https://help.servicetitan.com/how-to/configure-dispatch-board",
+    "https://help.servicetitan.com/how-to/recurring-services",
+    "https://help.servicetitan.com/how-to/setup-arrival-windows",
+    "https://help.servicetitan.com/how-to/tech-skills",
+    "https://help.servicetitan.com/how-to/titan-intelligence-overview",
+    "https://help.servicetitan.com/how-to/using-dispatch-board",
+    "https://help.servicetitan.com/v1/docs/dispatch-pro-overview",
+    "https://www.getjobber.com/academy/what-is-route-optimization/",
+    "https://www.getjobber.com/features/ai/",
+    "https://www.getjobber.com/features/client-hub/",
+    "https://www.getjobber.com/features/drag-drop-calendar/",
+    "https://www.getjobber.com/features/online-booking/",
+    "https://www.getjobber.com/features/route-optimization/",
+    "https://www.getjobber.com/features/schedule-and-dispatch-efficiently/",
+    "https://www.getjobber.com/features/scheduling/",
+    "https://www.getjobber.com/features/team-management/",
+    "https://www.getjobber.com/pricing/",
+    "https://www.housecallpro.com/compare/housecall-pro-servicetitan/",
+    "https://www.housecallpro.com/features/ai-team/",
+    "https://www.housecallpro.com/features/ai-team/csr-ai/",
+    "https://www.housecallpro.com/features/dispatching-software/",
+    "https://www.housecallpro.com/features/scheduling-software/",
+    "https://www.housecallpro.com/features/vehicle-gps-tracking/",
+    "https://www.housecallpro.com/pricing/",
+    "https://www.servicetitan.com/commercial-playbook/commercial-staffing",
+    "https://www.servicetitan.com/commercial-playbook/services-and-departments",
+    "https://www.servicetitan.com/comparison/servicetitan-vs-housecall-pro",
+    "https://www.servicetitan.com/features/dispatch-software",
+    "https://www.servicetitan.com/features/pro/dispatch",
+    "https://www.servicetitan.com/guides/contractor-playbook/technician-assignments",
+    "https://www.servicetitan.com/pricing"
+   ],
+   "synthetic": false,
+   "abstract": "Scheduling and dispatch is the daily-use core of every FMS platform — it's where office staff spend most of their screen time and where the \"does this software actually save me ti…"
+  },
+  {
+   "id": "synthetic__m-00-scheduling-dispatch",
+   "title": "Scheduling & Dispatch Teardown: FieldRocket vs. ServiceGrove vs. TradeHalo",
+   "path": "corpus/synthetic/m-00-scheduling-dispatch.md",
+   "scales": [
+    "M",
+    "L"
+   ],
+   "tokens": 8308,
+   "sourceUrls": [
+    "https://community.fieldrocket.example.com/t/keyboard-shortcuts-power-users",
+    "https://community.tradehalo.example.com/t/auto-balance-moved-my-jobs",
+    "https://developer.servicegrove.example.com/api/sandbox",
+    "https://developer.tradehalo.example.com/api/roadmap",
+    "https://help.fieldrocket.example.com/dispatch-board/overview",
+    "https://help.fieldrocket.example.com/smartslot/how-suggestions-work",
+    "https://help.servicegrove.example.com/case-studies/regional-plumbing-windshield-time",
+    "https://help.servicegrove.example.com/grid-vs-map-view",
+    "https://help.servicegrove.example.com/routesense/opt-in-optimization",
+    "https://help.tradehalo.example.com/auto-balance/how-it-works",
+    "https://help.tradehalo.example.com/mobile-app/offline-support",
+    "https://www.fieldrocket.example.com/pricing",
+    "https://www.servicegrove.example.com/pricing",
+    "https://www.tradehalo.example.com/pricing"
+   ],
+   "synthetic": true,
+   "abstract": "> SYNTHETIC EVAL FIXTURE — generated distractor content, not real research."
+  },
+  {
+   "id": "synthetic__m-01-payments-financing-checkout",
+   "title": "Payments, Financing & Checkout: How ServiceGrove, TradeHalo, and DispatchOwl Stack Up",
+   "path": "corpus/synthetic/m-01-payments-financing-checkout.md",
+   "scales": [
+    "M",
+    "L"
+   ],
+   "tokens": 1747,
+   "sourceUrls": [],
+   "synthetic": true,
+   "abstract": "> SYNTHETIC EVAL FIXTURE — generated distractor content, not real research."
+  },
+  {
+   "id": "synthetic__m-02-crm-customer-communications",
+   "title": "CRM & Customer Communications Teardown: TradeHalo, DispatchOwl, and CrewNimbus",
+   "path": "corpus/synthetic/m-02-crm-customer-communications.md",
+   "scales": [
+    "M",
+    "L"
+   ],
+   "tokens": 5203,
+   "sourceUrls": [],
+   "synthetic": true,
+   "abstract": "> SYNTHETIC EVAL FIXTURE — generated distractor content, not real research."
+  },
+  {
+   "id": "synthetic__m-03-price-book-catalog-management",
+   "title": "Price book & catalog management: how DispatchOwl, CrewNimbus, and JobSprocket structure their pricing data",
+   "path": "corpus/synthetic/m-03-price-book-catalog-management.md",
+   "scales": [
+    "M",
+    "L"
+   ],
+   "tokens": 6027,
+   "sourceUrls": [
+    "https://help.crewn",
+    "https://help.dispatchowl.example.com/catalog/bulk-import-mapping-templates",
+    "https://help.dispatchowl.example.com/catalog/exporting-catalog-data",
+    "https://help.dispatchowl.example.com/catalog/owl-catalog-overview",
+    "https://help.dispatchowl.example.com/plans/growth-plan-features"
+   ],
+   "synthetic": true,
+   "abstract": "> SYNTHETIC EVAL FIXTURE — generated distractor content, not real research."
+  },
+  {
+   "id": "synthetic__m-04-reporting-analytics",
+   "title": "Reporting & Analytics Teardown: CrewNimbus, JobSprocket, and RouteFalcon",
+   "path": "corpus/synthetic/m-04-reporting-analytics.md",
+   "scales": [
+    "M",
+    "L"
+   ],
+   "tokens": 2353,
+   "sourceUrls": [],
+   "synthetic": true,
+   "abstract": "> SYNTHETIC EVAL FIXTURE — generated distractor content, not real research."
+  },
+  {
+   "id": "synthetic__m-05-estimates-invoices",
+   "title": "Estimates & Invoices: A Field Teardown of JobSprocket, RouteFalcon, and ProValve",
+   "path": "corpus/synthetic/m-05-estimates-invoices.md",
+   "scales": [
+    "M",
+    "L"
+   ],
+   "tokens": 3202,
+   "sourceUrls": [],
+   "synthetic": true,
+   "abstract": "> SYNTHETIC EVAL FIXTURE — generated distractor content, not real research."
+  },
+  {
+   "id": "synthetic__nearmiss-housecall-pro-integrations-api",
+   "title": "Housecall Pro — Integrations & API Teardown",
+   "path": "corpus/synthetic/nearmiss-housecall-pro-integrations-api.md",
+   "scales": [
+    "M",
+    "L"
+   ],
+   "tokens": 3982,
+   "sourceUrls": [],
+   "synthetic": true,
+   "abstract": "> SYNTHETIC EVAL FIXTURE — generated distractor content, not real research."
+  },
+  {
+   "id": "synthetic__nearmiss-housecall-pro-timesheets-job-costing",
+   "title": "Housecall Pro: Timesheets & Job Costing Teardown",
+   "path": "corpus/synthetic/nearmiss-housecall-pro-timesheets-job-costing.md",
+   "scales": [
+    "M",
+    "L"
+   ],
+   "tokens": 5952,
+   "sourceUrls": [],
+   "synthetic": true,
+   "abstract": "> SYNTHETIC EVAL FIXTURE — generated distractor content, not real research."
+  },
+  {
+   "id": "synthetic__nearmiss-jobber-integrations-api",
+   "title": "Jobber Integrations & API: Where the Platform Actually Opens Up",
+   "path": "corpus/synthetic/nearmiss-jobber-integrations-api.md",
+   "scales": [
+    "M",
+    "L"
+   ],
+   "tokens": 5072,
+   "sourceUrls": [],
+   "synthetic": true,
+   "abstract": "> SYNTHETIC EVAL FIXTURE — generated distractor content, not real research."
+  },
+  {
+   "id": "synthetic__nearmiss-jobber-inventory-purchase-orders",
+   "title": "Jobber Inventory & Purchase Orders: A Field Teardown",
+   "path": "corpus/synthetic/nearmiss-jobber-inventory-purchase-orders.md",
+   "scales": [
+    "M",
+    "L"
+   ],
+   "tokens": 5025,
+   "sourceUrls": [
+    "https://community.jobber.example.com/t/multi-location-inventory-wishlist",
+    "https://community.jobber.example.com/t/partial-po-receiving-workaround",
+    "https://developer.jobber.example.com/docs/inventory-api-reference",
+    "https://help.jobber.example.com/articles/kit-builder-limitations",
+    "https://help.jobber.example.com/articles/po-composer-getting-started",
+    "https://help.jobber.example.com/articles/reorder-assist-faq",
+    "https://help.jobber.example.com/articles/stocksync-overview",
+    "https://help.jobber.example.com/articles/vendor-hub-setup",
+    "https://pricing.jobber.example.com/plans/foundation-momentum-summit",
+    "https://releasenotes.jobber.example.com/2026-summer-catalog-sync-beta"
+   ],
+   "synthetic": true,
+   "abstract": "> SYNTHETIC EVAL FIXTURE — generated distractor content, not real research."
+  },
+  {
+   "id": "synthetic__nearmiss-jobber-memberships-service-agreements",
+   "title": "Competitor Teardown: Jobber's Memberships & Service Agreements Stack",
+   "path": "corpus/synthetic/nearmiss-jobber-memberships-service-agreements.md",
+   "scales": [
+    "M",
+    "L"
+   ],
+   "tokens": 1750,
+   "sourceUrls": [],
+   "synthetic": true,
+   "abstract": "> SYNTHETIC EVAL FIXTURE — generated distractor content, not real research."
+  },
+  {
+   "id": "synthetic__nearmiss-jobber-timesheets-job-costing",
+   "title": "Jobber Timesheets & Job Costing: A Field Ops Teardown",
+   "path": "corpus/synthetic/nearmiss-jobber-timesheets-job-costing.md",
+   "scales": [
+    "M",
+    "L"
+   ],
+   "tokens": 4816,
+   "sourceUrls": [],
+   "synthetic": true,
+   "abstract": "> SYNTHETIC EVAL FIXTURE — generated distractor content, not real research."
+  },
+  {
+   "id": "synthetic__nearmiss-servicetitan-mobile-technician-app",
+   "title": "Teardown: ServiceTitan's Mobile Technician App vs. FieldPulse",
+   "path": "corpus/synthetic/nearmiss-servicetitan-mobile-technician-app.md",
+   "scales": [
+    "M",
+    "L"
+   ],
+   "tokens": 5689,
+   "sourceUrls": [
+    "https://apps.examplestore.example.com/servicetitan-technician/reviews",
+    "https://community.fieldservicehub.example.com/threads/servicetitan-voicelog-accuracy",
+    "https://help.fieldrocket.example.com/servicetitan-mobile-overview",
+    "https://help.fieldrocket.example.com/servicetitan-proofpacket-photo-tagging",
+    "https://help.fieldrocket.example.com/servicetitan-training-content-attachment",
+    "https://partners.titanhelp.example.com/integration-docs/inventory-mapping",
+    "https://support.titanhelp.example.com/mobile/offline-sync-behavior",
+    "https://support.titanhelp.example.com/payments/deposit-collection-flow",
+    "https://support.titanhelp.example.com/quotebuilder/non-catalog-parts-approval",
+    "https://webinars.titanpartners.example.com/transcript/techscore-badges-pilot"
+   ],
+   "synthetic": true,
+   "abstract": "> SYNTHETIC EVAL FIXTURE — generated distractor content, not real research."
+  }
+ ],
+ "scaleTokens": {
+  "S0": 25942,
+  "S": 107027,
+  "M": 166153,
+  "L": 166153
+ }
+}
