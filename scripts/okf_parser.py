@@ -13,6 +13,8 @@ import re
 # Reserved OKF filenames that are not concept docs (no frontmatter required).
 RESERVED = {"index.md", "log.md"}
 _CITE_RE = re.compile(r"\[([^\]]+)\]\((https?://[^)]+)\)")
+_FEATURE_LINE = re.compile(r"^-\s*([A-Za-z0-9_-]+)\s*:\s*(.+?)\s*$", re.M)
+_FEATURE_NOTE = re.compile(r"^(\S+)\s+\((.+)\)\s*$")
 _PLACEHOLDER_PREFIXES = ("_to be filled", "_add ", "_verify", "_summarize", "todo")
 
 
@@ -60,3 +62,20 @@ def citations(body: str):
 
 def as_bool(value) -> bool:
     return str(value).strip().lower() in ("true", "yes", "1")
+
+
+def features(body: str):
+    """[{'key','value','note'}] from a `# Features` list of `- key: value (note)` lines.
+
+    In a capability file `value` is the human title (no parenthetical). In an
+    offering file `value` is one of yes|partial|no|unknown, with an optional
+    `(note)`. Callers shape these into the row they need.
+    """
+    rows = []
+    for key, rest in _FEATURE_LINE.findall(section(body, "Features")):
+        m = _FEATURE_NOTE.match(rest)
+        if m:
+            rows.append({"key": key, "value": m.group(1), "note": m.group(2)})
+        else:
+            rows.append({"key": key, "value": rest, "note": None})
+    return rows

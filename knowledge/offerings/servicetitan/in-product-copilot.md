@@ -22,6 +22,15 @@ Office modules — Private Preview, not merely 'Coming soon': the public Atlas f
 
 Net: field/help-center copilot is GA and broadly available; office copilot is private-preview (limited-access), not GA and no longer just roadmap. More data-grounded than Jobber/HCP copilots, but because the office copilot is still preview-gated, this stays strong, not market_leading.
 
+# Features
+
+- query-data: partial (office analytics in private preview; field-tech Q&A is GA)
+- reports-lists: partial (via office modules, still private preview)
+- coaching: partial (Sales Coach in private preview)
+- field-tech-qa: yes
+- takes-actions: no
+- included-free: partial (base Atlas free; office modules preview, equipment gated behind Field Pro)
+
 # Citations
 
 [1] [Atlas Home - ServiceTitan Help Center](https://help.servicetitan.com/residential-s-r/docs/atlas-home)

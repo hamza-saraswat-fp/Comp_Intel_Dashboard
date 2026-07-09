@@ -5,9 +5,11 @@
 // researched competitor in the DB), so it lives here as a constant.
 
 export interface Source { title: string; url: string }
-export interface Offering { competitor: string; capability: string; status: string; depth: string | null; assessment: string; primary_source: string | null; sources: Source[]; as_of: string | null; needs_verification: boolean }
+export interface FeatureMark { key: string; value: string; note: string | null }
+export interface FeatureDef { key: string; title: string; sort_order: number }
+export interface Offering { competitor: string; capability: string; status: string; depth: string | null; assessment: string; primary_source: string | null; sources: Source[]; as_of: string | null; needs_verification: boolean; detail: string | null; features: FeatureMark[] }
 export interface Competitor { slug: string; name: string; is_fieldpulse: boolean; summary: string }
-export interface Capability { slug: string; title: string; blurb: string; overall: string; sort_order: number }
+export interface Capability { slug: string; title: string; blurb: string; overall: string; sort_order: number; features: FeatureDef[] }
 export interface DataShape { generated_at: string; competitors: Competitor[]; capabilities: Capability[]; offerings: Offering[] }
 
 // The 7 capability slugs, in display order — used to synthesize FieldPulse's row.
@@ -35,8 +37,10 @@ export const FIELDPULSE_OFFERINGS: Offering[] = CAPABILITY_SLUGS.map((capability
   status: "not_researched",
   depth: null,
   assessment: "",
+  detail: null,
   primary_source: null,
   sources: [],
+  features: [],
   as_of: null,
   needs_verification: true,
 }))

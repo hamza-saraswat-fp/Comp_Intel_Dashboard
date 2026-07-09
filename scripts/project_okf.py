@@ -23,7 +23,7 @@ import os
 import pathlib
 import sys
 
-from okf_parser import RESERVED, as_bool, citations, clean, parse_frontmatter, section
+from okf_parser import RESERVED, as_bool, citations, clean, features, parse_frontmatter, section
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 KB = ROOT / "knowledge"
@@ -57,6 +57,10 @@ def build_rows():
             "blurb": clean(fm.get("description")),
             "overall": clean(section(body, "State of the field")),
             "sort_order": int(fm.get("sort_order", "0") or 0),
+            "features": [
+                {"key": r["key"], "title": r["value"], "sort_order": i}
+                for i, r in enumerate(features(body))
+            ],
         })
 
     for path in sorted((KB / "offerings").rglob("*.md")):
@@ -71,8 +75,13 @@ def build_rows():
             "status": fm.get("status", "not_researched") or "not_researched",
             "depth": (fm.get("depth") or "").strip() or None,
             "assessment": clean(section(body, "Assessment")),
+            "detail": clean(section(body, "Detail")),
             "primary_source": (fm.get("primary_source") or "").strip() or None,
             "sources": citations(body),
+            "features": [
+                {"key": r["key"], "value": r["value"], "note": r["note"]}
+                for r in features(body)
+            ],
             "needs_verification": as_bool(fm.get("needs_verification")),
             "as_of": (fm.get("as_of") or "").strip() or None,
         })

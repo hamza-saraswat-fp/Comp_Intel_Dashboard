@@ -10,7 +10,7 @@ import { StatusPill } from "./StatusPill"
 import { Separator } from "./ui/separator"
 
 const stub = (status: string, depth: string | null = null): Offering => ({
-  competitor: "", capability: "", status, depth, assessment: "", primary_source: null, sources: [], as_of: null, needs_verification: false,
+  competitor: "", capability: "", status, depth, assessment: "", detail: null, primary_source: null, sources: [], features: [], as_of: null, needs_verification: false,
 })
 
 // Hover peek: a quick, click-free read of one player's assessment for a capability.

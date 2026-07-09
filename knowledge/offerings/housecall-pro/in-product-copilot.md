@@ -24,6 +24,15 @@ Housecall Pro ships two free, default-on conversational copilots that satisfy th
 
 Roster is consistent with the other two HCP cells (AI Team = Marketing / CSR / Analyst / Coach / Help; CSR AI 24/7 call answering is the only paid AI add-on).
 
+# Features
+
+- query-data: yes
+- reports-lists: yes (custom reports, filtered lists, invoice summaries)
+- coaching: yes (Coach AI)
+- field-tech-qa: no
+- takes-actions: no
+- included-free: yes (free, on by default)
+
 # Citations
 
 [1] [Housecall Pro — Analyst AI and Coach AI](https://www.housecallpro.com/features/ai-team/analyst-ai-and-coach-ai/)
