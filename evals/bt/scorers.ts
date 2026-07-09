@@ -127,13 +127,13 @@ export function RefusalAccuracy({ output, metadata }: Args) {
 // --- Format/tone: no em-dashes; a citation present on answerable questions ---
 export function FormatTone({ output, metadata }: Args) {
   const m = asQ(metadata);
-  const noEmDash = !output.includes('—');
-  if (!m.answerable || refused(output)) return { name: 'FormatTone', score: noEmDash ? 1 : 0, metadata: { noEmDash } };
+  const noDash = !output.includes('—') && !/ – /.test(output); // no em-dash, no spaced en-dash
+  if (!m.answerable || refused(output)) return { name: 'FormatTone', score: noDash ? 1 : 0, metadata: { noDash } };
   const hasCitation = /\]\(https?:\/\//.test(output);
   return {
     name: 'FormatTone',
-    score: ((noEmDash ? 1 : 0) + (hasCitation ? 1 : 0)) / 2,
-    metadata: { noEmDash, hasCitation },
+    score: ((noDash ? 1 : 0) + (hasCitation ? 1 : 0)) / 2,
+    metadata: { noDash, hasCitation },
   };
 }
 

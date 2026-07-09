@@ -7,6 +7,7 @@ import { streamText } from 'ai';
 import { createOpenRouter } from '@openrouter/ai-sdk-provider';
 import { SYSTEM_RULES, PREAMBLE } from '../../dashboard/api/_prompt.ts';
 import { INTEL_PACK } from '../../dashboard/api/_intel-pack.ts';
+import { deformatTransform } from '../../dashboard/api/_format.ts';
 
 const openrouter = createOpenRouter({ apiKey: process.env.OPENROUTER_API_KEY });
 const SYSTEM = SYSTEM_RULES + PREAMBLE + INTEL_PACK;
@@ -25,6 +26,7 @@ export function buildTask(opts: TaskOpts = {}) {
       model: openrouter(model),
       system: SYSTEM,
       messages: [{ role: 'user', content: question }],
+      experimental_transform: [deformatTransform()], // same normalizer as prod chat.ts
       ...(opts.temperature !== undefined ? { temperature: opts.temperature } : {}),
       ...(anthropicCaching
         ? { providerOptions: { openrouter: { cache_control: { type: 'ephemeral' }, provider: { order: ['anthropic'] } } } }

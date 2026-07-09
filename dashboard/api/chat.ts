@@ -18,6 +18,7 @@ import { streamText, convertToModelMessages, type UIMessage } from 'ai';
 import { INTEL_PACK } from './_intel-pack.js';
 import { SYSTEM_RULES, PREAMBLE } from './_prompt.js';
 import { saveChat } from './_supabase.js';
+import { deformatTransform } from './_format.js';
 
 export const config = { maxDuration: 120 };
 
@@ -49,6 +50,8 @@ export async function POST(req: Request): Promise<Response> {
     model: openrouter(model),
     system: SYSTEM,
     messages: modelMessages,
+    // Deterministically enforce the "no em-dashes" style the prompt can't (see _format.ts).
+    experimental_transform: [deformatTransform()],
     ...(anthropicCaching
       ? {
           providerOptions: {
