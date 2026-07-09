@@ -18,6 +18,15 @@ Jobber Automations runs trigger-based rules (quote/invoice follow-ups, auto-arch
 
 Verified against the Jobber AI page and the automate-repetitive-tasks page. Confirmed: a custom automation builder ('create custom rules to automatically follow up, tag contacts, or archive quotes'); Jobber AI 'learns how you run your business and suggests automations'; and Quote Auto-Drafting ('Jobber AI takes new client requests and drafts quotes in seconds using your past work and templates'). Covers invoice/quote follow-ups, reminders, high-value-quote alerts. Genuinely useful but bounded: each automation is a discrete rule with owner oversight, and AI-drafted quotes are drafts the user reviews — not a goal-seeking agent that chains many steps autonomously across the office. Depth basic — real shipped automation, but below the multi-step-autonomous-agent bar.
 
+# Features
+
+- single-domain: partial (automations and auto-drafted quotes run autonomously but bounded, with oversight)
+- rules-automations: yes (custom trigger/condition/action automation builder)
+- cross-functional: no (no cross-office orchestration)
+- goal-seeking: no (not a goal-seeking agent that chains steps autonomously)
+- human-in-loop: yes (oversight and approval points; AI quotes are drafts the user reviews)
+- shipped-ga: yes (Automations and AI-drafted quotes are shipped)
+
 # Citations
 
 [1] [Automate repetitive tasks - Jobber](https://www.getjobber.com/features/automate-repetitive-tasks/)

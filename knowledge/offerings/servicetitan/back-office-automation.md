@@ -18,6 +18,14 @@ ServiceTitan now ships genuine document/data automation in the back office, not 
 
 GA today: AP Automation, announced Jan 8 2026 and presented as launched (in use by named customers, account configuration required). The Accounts Payable feature page and help docs confirm the AP Inbox scans forwarded/uploaded vendor invoices (PDF/JPEG/PNG/TIFF), uses Titan Intelligence OCR to auto-fill the vendor-invoice review screen (with a manual-entry fallback if scanning fails), and performs 3-way matching to flag PO/receipt/pricing discrepancies, plus non-PO bill capture, vendor-credit and vendor-statement tracking. This is the correction to the prior cell: invoice OCR capture and automated AP data entry are shipped, not 'coming soon.' Note the Titan Intelligence marketing carousel still lists 'Automated Invoice Capture' under 'what's coming' — that page is stale relative to the AP Automation launch; the capability is live. Still GA and still assistive: Price Insights (regional average price per service benchmarking) and Smart Start (Titan Intelligence auto-adds a few hundred personalized common services) on the Pricebook Pro page, and the Invoice Summary/Email Generators on the Titan Intelligence page. Not yet GA / caveats: paying bills inside Accounts Payable was explicitly slated for Spring 2026 rollout (the payment leg, distinct from the capture/matching automation that is live) and not confirmed live from these sources; Automated Proposal Templates and the Integration Errors Assistant remain roadmap; the fully autonomous AR/invoice-review workflow ('Atlas in the Office', Pantheon 2025) is announced, not usable (track under agentic-workflow). Net: broadest and now deepest back-office AI of the three, ahead of Housecall Pro and Jobber on document/data automation.
 
+# Features
+
+- generative-quotes: no (Automated Proposal Templates are roadmap)
+- pricebook-ai: yes (Pricebook Pro Price Insights benchmarking and Smart Start auto-population)
+- invoice-summary: yes (Invoice Summary and Email Generators, GA)
+- invoice-ocr: yes (AP Automation OCR inbox with three-way matching, GA Jan 2026)
+- autonomous-entry: partial (AP Automation auto-fills captured invoices; fully autonomous AR agent is roadmap)
+
 # Citations
 
 [1] [ServiceTitan Introduces AP Automation and Expands Fintech Suite (GA, OCR inbox, three-way matching; Jan 8 2026)](https://www.servicetitan.com/press/servicetitan-introduces-ap-automation-and-expands-fintech-suite)

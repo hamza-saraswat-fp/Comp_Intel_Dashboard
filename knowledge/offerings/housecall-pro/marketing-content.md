@@ -18,6 +18,15 @@ Marketing AI is a free, default-on generative copilot that drafts marketing emai
 
 Generates marketing messages, email campaigns, service descriptions and SMS drafts from a brief prompt (e.g. '20% off service'); 'Write it for me' is embedded product-wide and was expanded Fall 2025. Packaging: FREE and default-on across all plans (part of the AI Team) — a real packaging advantage vs Jobber's paid Marketing Suite and ServiceTitan's paid Marketing Pro. Complemented by non-AI marketing tools (Postcards direct-mail, unified inbox). Limitation: prompt-driven assist (human reviews/edits output), not autonomous campaign orchestration. Comparable in kind to Jobber's generative copywriting; HCP's edge is free/broad bundling.
 
+# Features
+
+- draft-email-sms: yes (Marketing AI 'Write it for me' drafts email and SMS copy)
+- draft-social: partial (drafts service descriptions; social posts not explicitly listed)
+- campaign-generation: partial (drafts campaign copy; not autonomous campaign orchestration)
+- tone-restyle: unknown (not documented for Marketing AI)
+- ad-optimization: no (no AI ad optimization; marketing is content generation and postcards)
+- included-free: yes (Marketing AI is free and default-on across all plans)
+
 # Citations
 
 [1] [Housecall Pro — AI Team (Marketing AI generates email/service-description/campaign copy; 'always on and included for all plans')](https://www.housecallpro.com/features/ai-team/)

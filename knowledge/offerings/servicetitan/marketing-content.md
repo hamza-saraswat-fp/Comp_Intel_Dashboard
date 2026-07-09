@@ -18,6 +18,15 @@ Marketing Pro ships AI/data-driven campaign automation and Ads Optimizer (feeds 
 
 GA today (verified): Ads Optimizer trains Google Ads on ServiceTitan revenue/audience data to target high-value customers; automated email/direct-mail/review-request campaigns with data-driven audience targeting (e.g. unsold estimates, expiring memberships) and pre-built templates. The Titan Intelligence page lists 'Email Content Generator' and 'Audience Assistant' under 'Coming soon,' so LLM generation of marketing copy/SMS/social from business data is NOT yet GA — current automation leans on templates plus data targeting rather than generated assets. Sold within Marketing Pro (paid add-on). FieldPulse should NOT credit ServiceTitan with mature generative marketing content yet; this is a watch item. Depth = strong (robust, well-marketed, core to product) but not market-leading on this capability because the generative piece is unshipped.
 
+# Features
+
+- draft-email-sms: no (Email Content Generator is coming soon; campaigns use templates today)
+- draft-social: no (no generative social or content yet; coming soon)
+- campaign-generation: partial (data-driven campaign automation with templates; AI generation coming soon)
+- tone-restyle: no (no generative restyle; content generation coming soon)
+- ad-optimization: yes (Ads Optimizer feeds revenue data into Google Ads, GA)
+- included-free: no (Marketing Pro is a paid add-on)
+
 # Citations
 
 [1] [Titan Intelligence (TI) — lists Email Content Generator & Audience Assistant as 'Coming Soon'; Ads Optimizer & Review Response Generator available now](https://www.servicetitan.com/features/titan-intelligence)

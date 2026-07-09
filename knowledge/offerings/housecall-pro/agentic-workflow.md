@@ -18,6 +18,15 @@ Housecall Pro markets an autonomous 'AI Team' of virtual staff, but only one mem
 
 Verified against the AI Team page and the CSR AI sub-page. CSR AI confirmed to 'answer calls, chats, and book jobs 24/7,' qualify inquiries, auto-schedule against availability, and sync to the calendar without human intervention — a single-domain autonomous workflow that is currently available ('CSR AI sold separately,' free trial / demo offered). Analyst AI, Coach AI, and Marketing AI are explicitly conversational assistants (ask-a-question/get-an-answer), not autonomous multi-step office agents. No evidence of HCP running end-to-end cross-functional workflows (e.g. lead-to-invoice) autonomously. Rated shipped/basic: the one genuinely agentic surface (CSR AI booking) is GA, but the 'team of autonomous agents' framing outruns the actual autonomous surface, and there is no autonomous cross-office orchestration. Behind ServiceTitan's broader agentic ambitions in scope, ahead of it in what is actually live.
 
+# Features
+
+- single-domain: yes (CSR AI autonomously qualifies, schedules, and books jobs 24/7)
+- rules-automations: partial (specific automated triggers like review requests and recurring auto-invoicing; no general automation builder)
+- cross-functional: no (no autonomous cross-office orchestration)
+- goal-seeking: no (CSR AI is single-domain; no goal-seeking multi-step agent)
+- human-in-loop: yes (CSR AI escalates to a human on request)
+- shipped-ga: yes (CSR AI is GA, sold as a paid add-on)
+
 # Citations
 
 [1] [Housecall Pro — CSR AI](https://www.housecallpro.com/features/ai-team/csr-ai/)

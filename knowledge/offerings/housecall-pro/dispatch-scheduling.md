@@ -21,6 +21,14 @@ Housecall Pro still has NO native AI/ML dispatch: technician assignment and job 
 - **Beeline Routes still exists (third-party).** The paid Beeline Routes integration remains active for algorithmic day-sequencing/optimization (Daily tool minimizes drive time within arrival windows; Best Fit tool slots new jobs) at ~$65/mo first vehicle, +$25/mo per additional vehicle. It is no longer the *sole* route capability now that native route-based scheduling exists, but it remains a separate-vendor option and does not change the AI-dispatch verdict.
 - **Watch item — undisclosed AI release (preview only).** At the June 4 2026 Spring Summit, HCP gave "an exclusive preview of the company's largest AI product release to date." As of 2026-07-06 the contents are largely undisclosed and it is not GA; if it later ships ML dispatch/assignment, this cell would need to move off none. The existing "AI Team" offering (24/7 call answering/booking) remains unrelated to dispatch.
 
+# Features
+
+- ml-assignment: no (assignment is manual drag-and-drop with informal tags; no ML)
+- predicts-value: no
+- route-optimization: yes (native route-based scheduling, heuristic, GA May 2026)
+- capacity-aware: partial (auto-scheduling checks real-time availability; no capacity-planning model)
+- native: yes (native route-based scheduling is included; no ML dispatch)
+
 # Citations
 
 [1] [Housecall Pro — May 2026 Product Updates: New Look, Smarter Tools](https://www.housecallpro.com/resources/may-2026-product-updates/)

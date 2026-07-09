@@ -18,6 +18,14 @@ Jobber offers heuristic route optimization that sequences a day's jobs to minimi
 
 The Jobber Academy page confirms route optimization 'analyzes potential routes while factoring in the time of day, typical traffic conditions, road closures, and team member locations' and groups nearby jobs — but does not claim AI/ML and offers only GPS-location-based (not skill-based) assignment. Multiple 2026 reviews state Jobber dispatch is manual drag-and-drop with no AI technician matching by skill/location/workload, and that routing is basic versus ServiceTitan. Jobber rebuilt its scheduling engine in Oct 2025, but the upgrade is routing UX, not predictive ML assignment. Optimization-as-heuristic does not meet 'true ML technician assignment + schedule optimization'; status none, depth na.
 
+# Features
+
+- ml-assignment: no (manual drag-and-drop; no skill-based ML assignment)
+- predicts-value: no
+- route-optimization: yes (heuristic route optimization; gated to Grow/Plus plans)
+- capacity-aware: partial (lightweight guardrails: business hours, lead time; no capacity model)
+- native: yes (route optimization included in Grow/Plus plans, not a separate add-on)
+
 # Citations
 
 [1] [What is Route Optimization? – Jobber Academy](https://www.getjobber.com/academy/what-is-route-optimization/)

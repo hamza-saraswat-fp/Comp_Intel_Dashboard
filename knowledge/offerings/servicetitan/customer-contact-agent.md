@@ -18,6 +18,15 @@ ServiceTitan ships a GA AI Voice Agent that answers inbound calls 24/7, identifi
 
 AI Voice Agent handles inbound calls, after-hours/overflow, appointment confirm/reschedule, live human escalation, and call transcription/summaries; books using Adaptive Capacity. Verified GA: help docs confirm a self-service online purchase flow, usage-based billing, and self-configuration in Settings (not a limited pilot) for residential US/Canada companies on The Essentials + The Works packages with Basic Phone or Phones Pro. The marketing page's 'Pilot program represents early results' disclaimer refers to early-adopter results DATA, not product availability. SMS Agent is included with Marketing Pro (inbound SMS, speed-to-lead, follow-ups). Contact Center Pro (enterprise omni-channel + AI Manager Assist with summaries/sentiment) is still in early access. No public price; Voice Agent is a paid, usage-billed add-on. Breadth (voice + SMS + full contact center) exceeds both peers.
 
+# Features
+
+- answers-calls: yes
+- sms-chat: yes (SMS Agent included with Marketing Pro)
+- books-jobs: yes (books to the dispatch board via Adaptive Capacity, 24/7)
+- lead-capture: yes (identifies customers, infers job types; SMS Agent speed-to-lead)
+- call-summaries: yes (transcription and summaries GA; sentiment via Manager Assist, early access)
+- included-free: no (Voice Agent is a paid, usage-billed add-on)
+
 # Citations
 
 [1] [AI Voice Agent for Trades & Services Businesses | ServiceTitan Pro](https://www.servicetitan.com/features/pro/voice-agent)

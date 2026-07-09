@@ -18,6 +18,15 @@ CSR AI is a GA, autonomous AI receptionist that answers inbound calls AND chats 
 
 CSR AI handles both voice calls and chat, books appointments instantly 24/7, and uses existing HCP account data to book 'the same way you would.' Verified GA: the feature page presents it as an active product with no beta language ('CSR AI answers calls, chats, and books jobs 24/7'). Escalation confirmed — it gathers caller info and forwards to a number of your choice or an HCP Assist rep. Packaging: the ONLY paid AI add-on (everything else in the AI Team is free); sold separately on top of any plan including MAX. No public price on the page — custom/sales-quoted; contractor reports suggest roughly $200-500+/mo and some usage/per-call pricing that can spike at high call volume (needs_verification on exact $). Limitation: it can misunderstand and make unsupported promises, so human review/handoff is advised.
 
+# Features
+
+- answers-calls: yes
+- sms-chat: yes (handles voice calls and chat 24/7)
+- books-jobs: yes (books to the calendar using existing account data, 24/7)
+- lead-capture: yes (gathers caller info, books, escalates to a human on request)
+- call-summaries: unknown (not documented for CSR AI)
+- included-free: no (CSR AI voice is Housecall Pro's only paid AI add-on; chat CSR AI is free)
+
 # Citations
 
 [1] [Housecall Pro — CSR AI (24/7 AI Customer Service Assistant)](https://www.housecallpro.com/features/ai-team/csr-ai/)
