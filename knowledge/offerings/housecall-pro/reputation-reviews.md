@@ -18,6 +18,14 @@ Housecall Pro automates review solicitation and provides a unified Google/Facebo
 
 Automated review requests after every job/payment with a direct link, plus a centralized Google/Facebook dashboard to view and respond to reviews from one place (both confirmed on the review-management page). AI-drafted responses are confirmed in HCP's help center: 'Write it for Me' generates 'polished, ready-to-use text' for 'responses to Reviews' from a short prompt, and the AI Team overview lists 'review responses' as a Marketing AI capability. Response generation is prompt-driven and human-reviewed (not fully autonomous auto-reply). Limitations vs. ServiceTitan: monitoring covers only Google/Facebook (no 60+ listing-site breadth or technician/job attribution), and the AI is the general 'Write it for Me' generator rather than a review-dedicated tool with tone/length controls.
 
+# Features
+
+- auto-requests: yes (after every job or payment, with a direct link)
+- ai-responses: yes (Marketing AI 'Write it for Me' drafts review responses)
+- tone-controls: no (general 'Write it for Me' generator; no review-specific tone/length controls)
+- monitoring-breadth: partial (Google and Facebook only; no 60+ site breadth)
+- attribution: no (no review-to-job/tech attribution)
+
 # Citations
 
 [1] [Housecall Pro — Review Management Software (automated requests + Google/Facebook dashboard)](https://www.housecallpro.com/features/review-management-software/)
