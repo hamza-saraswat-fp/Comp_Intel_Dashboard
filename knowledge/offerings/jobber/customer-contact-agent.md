@@ -18,6 +18,15 @@ Jobber's strongest AI area: a real AI voice/text receptionist (Receptionist, pow
 
 Receptionist (powered by Jobber AI) is generally available as a usage-based add-on: $29/mo including 30 conversations, then $0.79 per additional conversation, available on any plan; it is included at no additional cost with unlimited usage on the Plus plan. Per Jobber's pricing page (2026-07), Plus is $399/mo billed annually (prepaid), $439/mo on a 1-year commitment, and $499/mo with no commitment (roughly $399-499, not the previously listed $449). Capabilities: books jobs, captures requests, takes messages with task creation, transfers calls on keywords, caller-ID client matching, real-time owner notifications/monitoring with take-over, and transcripts/recordings. Verified GA: the PR Newswire release (Aug 18, 2025) describes it as 'ready to work right out of the box' with 200,000+ conversations already handled, and the feature page is publicly purchasable with a free trial. The current help-center article is titled 'Receptionist - powered by Jobber AI' with no Beta label; the 'Beta' tag belongs to a separate 'Jobber AI Voice and Chat (Beta)' article, so Receptionist is treated as shipped. Separately, Jobber AI Voice (included on all plans) lets field users run 100+ in-app tasks hands-free by voice.
 
+# Features
+
+- answers-calls: yes
+- sms-chat: yes (answers calls and texts 24/7)
+- books-jobs: yes (books visits into the calendar, 24/7)
+- lead-capture: yes (qualifies and captures leads, caller-ID client matching)
+- call-summaries: partial (transcripts and recordings; summaries and sentiment not detailed)
+- included-free: partial (paid add-on at $29/mo; included free on the Plus plan)
+
 # Citations
 
 [1] [AI Receptionist for Home Service Businesses | Jobber](https://www.getjobber.com/features/ai-receptionist/)
