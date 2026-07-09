@@ -6,9 +6,10 @@
     "types": ["node"],
     "skipLibCheck": true,
 
-    /* Bundler mode — Vercel builds api/ with esbuild; this project is typecheck-only. */
-    "module": "esnext",
-    "moduleResolution": "bundler",
+    /* nodenext mirrors Vercel's ESM runtime (package is "type": "module"), so the
+       typecheck enforces explicit .js extensions on relative imports. */
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
     "allowImportingTsExtensions": true,
     "verbatimModuleSyntax": true,
     "moduleDetection": "force",
